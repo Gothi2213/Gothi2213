@@ -2,7 +2,7 @@
 
 ### Software Developer in training
 
-🇦🇷 Argentina
+📍 Santa Fe, Argentina
 
 I'm a Software Development student currently building my skills
 through academic and personal learning.
