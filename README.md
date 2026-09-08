@@ -1,87 +1,207 @@
-# Hi, I'm Thiago Sarco 👋
+<div align="center">
 
-### Software Developer in training
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:161B22,100:238636&height=220&section=header&text=Thiago%20Sarco&fontSize=52&fontColor=FFFFFF&fontAlignY=38&desc=Software%20Developer%20in%20Training&descAlignY=58&descSize=20&animation=fadeIn" width="100%"/>
 
-📍 Santa Fe, Argentina
+</div>
 
-I'm a Software Development student currently building my skills
-through academic and personal learning.
+<br>
 
-I'm interested in software development, web development and
-creating practical solutions through technology.
+<div align="center">
+
+### 💻 Software Developer in Training
+
+🇦🇷 **Santa Fe, Argentina**
+
+<br>
+
+[![GitHub](https://img.shields.io/badge/GitHub-Gothi2213-181717?style=for-the-badge&logo=github)](https://github.com/Gothi2213)
+
+</div>
 
 ---
 
-### 🇪🇸 Español
+## 👋 About Me
 
-Soy estudiante de Desarrollo de Software y actualmente estoy
-desarrollando mis conocimientos mediante el aprendizaje académico
-y proyectos personales.
+I'm a **Software Development student** currently building my skills through academic learning and personal projects.
 
-Me interesa el desarrollo de software, el desarrollo web y la
-creación de soluciones prácticas mediante la tecnología.
+I'm interested in **software development, web development, databases and problem solving**, with a focus on creating practical and functional solutions.
+
+I'm constantly learning and looking for opportunities to apply my knowledge, collaborate with others and continue growing as a developer.
+
+<br>
+
+<div align="center">
+
+> **"Learn. Build. Improve."** 🚀
+
+</div>
 
 ---
 
 ## 🛠️ Technologies & Tools
 
-### Currently learning
+<div align="center">
 
-![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white)
+### 💻 Programming
 
-### Web Development
+<img src="https://skillicons.dev/icons?i=java,js,cpp" />
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+<br><br>
 
-### Basic knowledge
+### 🌐 Web Development
 
-![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
+<img src="https://skillicons.dev/icons?i=html,css" />
 
-### Tools
+<br><br>
 
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
+### 🗄️ Database & Tools
+
+<img src="https://skillicons.dev/icons?i=mysql,git,github" />
+
+</div>
 
 ---
 
 ## 📚 Currently Learning
 
-- Object-Oriented Programming
-- Web Development
-- Databases and SQL
-- Software Development
-- Backend Development
-- Frontend Development
-- Git & GitHub
+<table align="center">
+<tr>
+<td align="center" width="160">
+
+### ☕
+**Java**
+
+Object-Oriented Programming
+
+</td>
+
+<td align="center" width="160">
+
+### 🌐
+**Web Development**
+
+HTML · CSS · JavaScript
+
+</td>
+
+<td align="center" width="160">
+
+### 🗄️
+**Databases**
+
+SQL & Database Design
+
+</td>
+</tr>
+
+<tr>
+<td align="center">
+
+### ⚙️
+**Backend**
+
+Application Logic
+
+</td>
+
+<td align="center">
+
+### 🎨
+**Frontend**
+
+Responsive Interfaces
+
+</td>
+
+<td align="center">
+
+### 🔧
+**Git & GitHub**
+
+Version Control
+
+</td>
+</tr>
+</table>
 
 ---
 
-## 🎯 About Me
+## 🎯 Goals
 
-I'm currently studying Software Development and continuously
-working on improving my programming and problem-solving skills.
+<table>
+<tr>
+<td width="50%">
 
-My goal is to keep learning, build real-world projects and gain
-my first professional experience in the software development industry.
+### 🚀 Development
+
+- Improve my programming skills
+- Strengthen my Java knowledge
+- Develop full applications
+- Improve my frontend skills
+- Learn more about backend development
+- Work with databases
+
+</td>
+
+<td width="50%">
+
+### 💼 Professional
+
+- Build real-world projects
+- Improve my GitHub portfolio
+- Gain experience working in teams
+- Learn professional development practices
+- Obtain my first professional experience
+- Continue growing as a developer
+
+</td>
+</tr>
+</table>
 
 ---
 
-### 🇪🇸 Sobre mí
+## 🧠 What I'm Working On
 
-Actualmente estudio Desarrollo de Software y trabajo
-continuamente en mejorar mis habilidades de programación
-y resolución de problemas.
+<div align="center">
 
-Mi objetivo es seguir aprendiendo, desarrollar proyectos
-reales y obtener mi primera experiencia profesional en
-la industria del desarrollo de software.
+| 💡 Area | 📈 Focus |
+|:---:|:---|
+| **Programming** | Java & Object-Oriented Programming |
+| **Frontend** | HTML, CSS & JavaScript |
+| **Databases** | SQL & Database Design |
+| **Backend** | Application Logic & APIs |
+| **Software Engineering** | Analysis, Design & Development |
+| **Version Control** | Git & GitHub |
+
+</div>
 
 ---
 
-## 📫 Contact
+## 📊 GitHub Statistics
 
-**GitHub:** [Gothi2213](https://github.com/Gothi2213)
-**Instagram:** [Gothi2213](https://www.instagram.com/thiago.sarco13/)
+<div align="center">
+
+<img src="https://github-readme-stats.vercel.app/api?username=Gothi2213&show_icons=true&hide_border=true&theme=github_dark&bg_color=0D1117&title_color=58A6FF&icon_color=58A6FF&text_color=C9D1D9" height="170"/>
+
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Gothi2213&layout=compact&hide_border=true&theme=github_dark&bg_color=0D1117&title_color=58A6FF&text_color=C9D1D9" height="170"/>
+
+</div>
+
+---
+
+## 💼 Professional Goals
+
+I'm currently looking for opportunities to gain my **first professional experience in software development**.
+
+I'm particularly interested in opportunities where I can:
+
+```text
+LEARN
+  ↓
+BUILD
+  ↓
+COLLABORATE
+  ↓
+IMPROVE
+  ↓
+GROW
