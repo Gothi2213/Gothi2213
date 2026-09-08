@@ -4,15 +4,11 @@
 
 <br>
 
-### 💻 Software Developer in Training
+### 💻 Software Developer in Training | 📍 Santa Fe, Argentina
 
-📍 **Santa Fe, Argentina**
-
-<br>
-
-<a href="https://github.com/Gothi2213">
-<img src="https://img.shields.io/badge/GitHub-Gothi2213-181717?style=for-the-badge&logo=github&logoColor=white">
-</a>
+<p align="center">
+  <a href="mailto:thiagosarco13@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
+</p>
 
 </div>
 
@@ -20,199 +16,45 @@
 
 ## 👋 About Me
 
-I'm a **Software Development student** currently building my skills through academic learning and personal projects.
+I'm a **2nd-year Software Development student** actively seeking my first opportunity as a Junior Developer. I am passionate about building practical, functional solutions, paying close attention to both backend logic and user experience.
 
-I'm interested in **software development, web development, databases and problem solving**, with a focus on creating practical and functional solutions.
-
-I'm continuously learning, experimenting with new technologies and working on projects to strengthen my technical and problem-solving skills.
+* 🎯 **Goal:** Join a team where I can add value, apply best practices, and gain real-world experience.
+* 🌱 **Currently focusing on:** Database architecture, web deployments, and refining my OOP skills.
+* ⚡ **Fun fact:** I love optimizing hardware performance and gaming in my free time.
 
 ---
 
+## 🛠️ Tech Stack & Tools
+
 <div align="center">
-
-## 🛠️ Technologies & Tools
-
-<br>
-
-### 💻 Programming
-
-<img src="https://skillicons.dev/icons?i=java,js,cpp" />
-
-<br><br>
-
-### 🌐 Web Development
-
-<img src="https://skillicons.dev/icons?i=html,css" />
-
-<br><br>
-
-### 🗄️ Database & Version Control
-
-<img src="https://skillicons.dev/icons?i=mysql,git,github" />
-
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=java,cpp,js,html,css,mysql,git,github,figma,netlify" alt="Tech Stack" />
+  </a>
 </div>
 
 ---
 
-## 📚 Currently Learning
+## 🚀 Highlighted Projects
 
-<table align="center">
-<tr>
-<td align="center" width="180">
+*(Replace the "#" with the links to your actual repositories)*
 
-### ☕
-**Java**
-
-Object-Oriented Programming
-
-</td>
-
-<td align="center" width="180">
-
-### 🌐
-**Web Development**
-
-HTML · CSS · JavaScript
-
-</td>
-
-<td align="center" width="180">
-
-### 🗄️
-**Databases**
-
-SQL & Database Design
-
-</td>
-</tr>
-
-<tr>
-<td align="center">
-
-### ⚙️
-**Backend**
-
-Application Logic
-
-</td>
-
-<td align="center">
-
-### 🎨
-**Frontend**
-
-Responsive Interfaces
-
-</td>
-
-<td align="center">
-
-### 🔧
-**Git & GitHub**
-
-Version Control
-
-</td>
-</tr>
-</table>
+| 🏥 Medical Appointments System | 📊 Statistical Data Analysis |
+| :--- | :--- |
+| Full-stack application for scheduling medical appointments. Integrated real user surveys (Google Forms) and UI design. | Academic project analyzing linear regression, Pearson correlation, and scatter plots using datasets. |
+| **Stack:** `Java` `MySQL` `Figma` | **Stack:** `Excel` `Data Analysis` |
+| [🔗 View Repository](#) | [🔗 View Repository](#) |
 
 ---
 
-## 🎯 Goals
+## 📊 GitHub Stats
 
-<table>
-<tr>
-<td width="50%">
-
-### 🚀 Technical
-
-- Improve my Java skills
-- Strengthen Object-Oriented Programming
-- Develop better web applications
-- Improve frontend development
-- Learn backend development
-- Strengthen my database knowledge
-
-</td>
-
-<td width="50%">
-
-### 💼 Professional
-
-- Build real-world projects
-- Improve my development workflow
-- Gain experience working in teams
-- Learn professional development practices
-- Obtain my first professional experience
-- Continue growing as a developer
-
-</td>
-</tr>
-</table>
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=Gothi2213&show_icons=true&theme=radical&hide_border=true&bg_color=0D1117" height="150" alt="GitHub Stats" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Gothi2213&layout=compact&theme=radical&hide_border=true&bg_color=0D1117" height="150" alt="Top Languages" />
+</div>
 
 ---
 
 <div align="center">
-
-## 🧠 Areas I'm Developing
-
+  <i><b>"LEARN ➔ BUILD ➔ COLLABORATE ➔ IMPROVE ➔ GROW"</b></i>
 </div>
-
-<table align="center">
-<tr>
-<td align="center">
-
-💻  
-**Programming**
-
-Java & OOP
-
-</td>
-
-<td align="center">
-
-🌐  
-**Frontend**
-
-HTML · CSS · JS
-
-</td>
-
-<td align="center">
-
-🗄️  
-**Databases**
-
-SQL
-
-</td>
-
-<td align="center">
-
-⚙️  
-**Software**
-
-Analysis & Development
-
-</td>
-</tr>
-</table>
-
----
-
-## 💼 Professional Objective
-
-I'm currently looking for opportunities to gain my **first professional experience in software development**.
-
-I'm interested in opportunities where I can learn from experienced developers, contribute to real-world projects, work as part of a team and continue developing my technical skills.
-
-```text
-LEARN
-  ↓
-BUILD
-  ↓
-COLLABORATE
-  ↓
-IMPROVE
-  ↓
-GROW
