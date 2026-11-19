@@ -55,105 +55,80 @@ def fetch(user, token):
 
 
 # ------------------------------------------------------------------ render
-def perim(w, h, r):
-    return 2 * (w - 2 * r) + 2 * (h - 2 * r) + 2 * math.pi * r
-
-
-def travel(x, y, w, h, r, dur, phase=0):
-    P = perim(w, h, r)
-    tail, head = P * .12, P * .02
-    b = f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{r}" fill="none" stroke-linecap="round"'
-    an = lambda off: f'<animate attributeName="stroke-dashoffset" from="{-off:.1f}" to="{-off - P:.1f}" dur="{dur}s" begin="-{phase}s" repeatCount="indefinite"/></rect>'
-    return (b + f' stroke="#22D3EE" stroke-width="6" stroke-opacity=".5" stroke-dasharray="{tail:.1f} {P - tail:.1f}" filter="url(#glow)">' + an(0) +
-            b + f' stroke="url(#trail)" stroke-width="2" stroke-dasharray="{tail:.1f} {P - tail:.1f}">' + an(0) +
-            b + f' stroke="#fff" stroke-width="2.6" stroke-dasharray="{head:.1f} {P - head:.1f}">' + an(tail - head))
-
-
 def render(d):
-    W, H = 1280, 470
+    W, H = 900, 500
     ph = d is None
-    fmt = lambda v: '-' if ph else f'{v:,}'
-    tiles = [('REPOSITORIES', 'repos'), ('TOTAL STARS', 'stars'), ('FOLLOWERS', 'followers'), ('CONTRIBUTIONS', 'total'),
-             ('COMMITS / YEAR', 'commits'), ('PULL REQUESTS', 'prs'), ('ISSUES', 'issues'), ('CODE REVIEWS', 'reviews')]
-    o = ''
-    for i, (lab, key) in enumerate(tiles):
-        cx, cy = 30 + (i % 2) * 190, 34 + (i // 2) * 96
-        v = fmt(d[key]) if d else '-'
-        col = PALETTE[i % 4]
-        o += (f'<g><rect x="{cx}" y="{cy}" width="180" height="86" rx="14" fill="#0E1A3A" stroke="#1E3A8A"/>'
-              f'<rect x="{cx}" y="{cy + 18}" width="3" height="50" rx="1.5" fill="{col}"><animate attributeName="opacity" values=".4;1;.4" dur="3s" begin="-{i * .4:.1f}s" repeatCount="indefinite"/></rect>'
-              f'<text x="{cx + 18}" y="{cy + 28}" font-family="{MONO}" font-size="11" letter-spacing="1.6" fill="{col}">{lab}</text>'
-              f'<text x="{cx + 18}" y="{cy + 66}" font-family="{FONT}" font-size="34" font-weight="800" fill="#3B82F6" filter="url(#tb)" opacity=".5">{v}</text>'
-              f'<text x="{cx + 18}" y="{cy + 66}" font-family="{FONT}" font-size="34" font-weight="800" fill="#FFFFFF">{v}</text>'
-              f'<animate attributeName="opacity" values="0;0;1" keyTimes="0;{.1 + i * .06:.2f};1" dur="1.6s" fill="freeze"/></g>')
-    # languages
-    o += f'<text x="430" y="52" font-family="{MONO}" font-size="12" letter-spacing="2.4" fill="#22D3EE">TOP LANGUAGES</text>'
-    o += '<rect x="430" y="66" width="820" height="18" rx="9" fill="#0E1A3A" stroke="#1E3A8A"/>'
+    fmt = lambda v: '--' if ph else f'{v:,}'
+    big = [('REPOSITORIES', 'repos', '#60A5FA'), ('STARS', 'stars', '#22D3EE'), ('FOLLOWERS', 'followers', '#A78BFA'), ('CONTRIBUTIONS', 'total', '#4ADE80')]
+    small = [('commits / year', 'commits'), ('pull requests', 'prs'), ('issues', 'issues'), ('code reviews', 'reviews')]
+    o = (f'<text class="m" x="40" y="46" font-size="13" fill="#22D3EE" letter-spacing="3">08 &#8212; LIVE FROM THE GITHUB API</text>')
+    for i, (lab, key, col) in enumerate(big):
+        x = 40 + i * 215
+        if i:
+            o += f'<path d="M{x - 22},72V150" stroke="#93C5FD" stroke-opacity=".18"/>'
+        o += (f'<g class="in" style="animation-delay:{.1 + i * .12:.2f}s"><text class="m" x="{x}" y="86" font-size="12" letter-spacing="2.4" fill="{col}">{lab}</text>'
+              f'<text x="{x}" y="140" font-size="58" font-weight="800" fill="{col}" filter="url(#b8)" opacity=".45">{fmt(d[key]) if d else "--"}</text>'
+              f'<text x="{x}" y="140" font-size="58" font-weight="800" fill="#F1F6FF">{fmt(d[key]) if d else "--"}</text></g>')
+    for i, (lab, key) in enumerate(small):
+        x = 40 + i * 215
+        o += (f'<g class="in" style="animation-delay:{.5 + i * .1:.2f}s"><text x="{x}" y="190" font-size="22" font-weight="700" fill="#DBEAFE">{fmt(d[key]) if d else "--"}</text>'
+              f'<text class="m" x="{x + (len(fmt(d[key]) if d else "--") * 13 + 10)}" y="189" font-size="12.5" fill="#7F93BA">{lab}</text></g>')
+    o += '<path d="M40,214H860" stroke="#93C5FD" stroke-opacity=".15"/>'
+    # languages ribbon
     langs = []
     if d and d['langs']:
         tot = sum(d['langs'].values())
         items = sorted(d['langs'].items(), key=lambda kv: -kv[1])
-        top = items[:6]
+        langs = [(k, v / tot) for k, v in items[:6]]
         rest = sum(v for _, v in items[6:])
-        langs = [(k, v / tot) for k, v in top] + ([('Other', rest / tot)] if rest else [])
+        if rest:
+            langs.append(('Other', rest / tot))
+    o += '<text class="m" x="40" y="246" font-size="12" letter-spacing="2.4" fill="#22D3EE">TOP LANGUAGES</text>'
+    o += '<clipPath id="lc"><rect x="40" y="258" width="820" height="14" rx="7"/></clipPath><rect x="40" y="258" width="820" height="14" rx="7" fill="#0A1330" stroke="#1E3A8A"/>'
     if langs:
-        x = 430
-        clip = '<clipPath id="lc"><rect x="430" y="66" width="820" height="18" rx="9"/></clipPath><g clip-path="url(#lc)">'
+        x, seg = 40, ''
         for i, (k, p) in enumerate(langs):
-            wseg = 820 * p
-            c = PALETTE[i % len(PALETTE)]
-            clip += (f'<rect x="{x:.1f}" y="66" width="0" height="18" fill="{c}"><animate attributeName="width" values="0;0;{wseg:.1f}" keyTimes="0;{.15 + i * .08:.2f};1" dur="1.8s" fill="freeze" calcMode="spline" keySplines="0 0 1 1;.2 .8 .2 1"/></rect>')
-            x += wseg
-        o += clip + '</g>'
-        o += '<rect x="430" y="66" width="120" height="18" fill="url(#sheen)" clip-path="url(#lc)"><animate attributeName="x" values="380;1250;1250" keyTimes="0;.5;1" dur="5s" repeatCount="indefinite"/></rect>'
+            w = 820 * p
+            seg += f'<rect x="{x:.1f}" y="258" width="{max(w - 2, .5):.1f}" height="14" fill="{PALETTE[i % len(PALETTE)]}"/>'
+            x += w
+        o += f'<g clip-path="url(#lc)"><g class="grow">{seg}</g></g>'
         for i, (k, p) in enumerate(langs):
-            lx, ly = 430 + (i % 4) * 205, 112 + (i // 4) * 28
-            c = PALETTE[i % len(PALETTE)]
-            o += (f'<circle cx="{lx + 6}" cy="{ly - 4}" r="5" fill="{c}"><animate attributeName="opacity" values="1;.4;1" dur="2.6s" begin="-{i * .3:.1f}s" repeatCount="indefinite"/></circle>'
-                  f'<text x="{lx + 20}" y="{ly}" font-family="{FONT}" font-size="14" font-weight="600" fill="#DBEAFE">{esc(k)}</text>'
-                  f'<text x="{lx + 186}" y="{ly}" text-anchor="end" font-family="{MONO}" font-size="12" fill="#6B7C99">{p * 100:.1f}%</text>')
+            lx, ly = 40 + (i % 4) * 205, 304 + (i // 4) * 26
+            o += (f'<circle cx="{lx + 5}" cy="{ly - 5}" r="4.5" fill="{PALETTE[i % len(PALETTE)]}"/><text x="{lx + 17}" y="{ly}" font-size="15" font-weight="600" fill="#DBEAFE">{esc(k)}</text>'
+                  f'<text x="{lx + 185}" y="{ly}" text-anchor="end" class="m" font-size="12.5" fill="#7F93BA">{p * 100:.1f}%</text>')
     else:
-        o += f'<text x="430" y="112" font-family="{MONO}" font-size="13" fill="#6B7C99">// languages appear after the first sync with GitHub</text>'
+        o += '<text class="m" x="40" y="304" font-size="13" fill="#7F93BA">// languages appear after the first sync with GitHub</text>'
     # heatmap
-    o += f'<text x="430" y="212" font-family="{MONO}" font-size="12" letter-spacing="2.4" fill="#22D3EE">CONTRIBUTIONS / LAST 12 MONTHS</text>'
     weeks = d['weeks'][-53:] if d else [[0] * 7 for _ in range(53)]
     mx = max([max(w) for w in weeks] + [1])
     cols = ['#0E1A3A', '#1E3A8A', '#2563EB', '#60A5FA', '#67E8F9']
     lvl = lambda n: 0 if n == 0 else min(4, 1 + int(3.999 * n / mx))
-    cells = ''
+    o += '<text class="m" x="40" y="366" font-size="12" letter-spacing="2.4" fill="#22D3EE">CONTRIBUTIONS / LAST 12 MONTHS</text>'
     for wi, wk in enumerate(weeks):
-        for di, n in enumerate(wk):
-            stk = ' stroke="#16294F"' if n == 0 else ''
-            cells += f'<rect x="{430 + wi * 15}" y="{228 + di * 15}" width="12" height="12" rx="3" fill="{cols[lvl(n)]}"{stk}/>'
-    o += (f'<clipPath id="hc"><rect x="430" y="224" width="0" height="116"><animate attributeName="width" values="0;800" dur="2.2s" fill="freeze" calcMode="spline" keySplines=".3 .6 .3 1" keyTimes="0;1"/></rect></clipPath>'
-          f'<g clip-path="url(#hc)">{cells}</g>'
-          '<clipPath id="hc2"><rect x="430" y="224" width="800" height="116"/></clipPath>'
-          '<rect x="380" y="224" width="90" height="116" fill="url(#sheen)" clip-path="url(#hc2)" transform="skewX(-12)"><animate attributeName="x" values="380;1300;1300" keyTimes="0;.55;1" dur="6s" begin="2.2s" repeatCount="indefinite"/></rect>')
-    # legend
-    o += f'<text x="1070" y="368" text-anchor="end" font-family="{MONO}" font-size="11" fill="#6B7C99">less</text>'
-    for i, c in enumerate(cols):
-        o += f'<rect x="{1078 + i * 16}" y="358" width="12" height="12" rx="3" fill="{c}"/>'
-    o += f'<text x="1166" y="368" font-family="{MONO}" font-size="11" fill="#6B7C99">more</text>'
+        cells = ''.join(f'<rect x="{40 + wi * 15.5:.1f}" y="{380 + di * 15}" width="12" height="12" rx="3" fill="{cols[lvl(n)]}"{" stroke=\"#16294F\"" if n == 0 else ""}/>' for di, n in enumerate(wk))
+        o += f'<g class="col" style="animation-delay:{.4 + wi * .022:.2f}s">{cells}</g>'
     if ph:
-        o += f'<text x="430" y="368" font-family="{MONO}" font-size="13" fill="#6B7C99">// waiting for the first sync (GitHub Action)</text>'
+        o += '<text class="m" x="300" y="366" font-size="12" fill="#7F93BA">// waiting for the first sync (GitHub Action)</text>'
+    for i, c in enumerate(cols):
+        o += f'<rect x="{722 + i * 16}" y="356" width="12" height="12" rx="3" fill="{c}"/>'
+    o += '<text class="m" x="714" y="366" text-anchor="end" font-size="11" fill="#7F93BA">less</text><text class="m" x="810" y="366" font-size="11" fill="#7F93BA">more</text>'
     stamp = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d')
-    o += f'<text x="30" y="{H - 24}" font-family="{MONO}" font-size="11" fill="#5B6E92">{"awaiting first sync" if ph else "updated " + stamp + " UTC"}</text>'
-    o += f'<text x="{W - 30}" y="{H - 24}" text-anchor="end" font-family="{MONO}" font-size="11" fill="#5B6E92">data: GitHub API</text>'
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="GitHub stats: repositories, stars, followers, contributions, top languages and contribution heatmap">
-<defs>
-<linearGradient id="panel" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0E1833"/><stop offset="1" stop-color="#080D1B"/></linearGradient>
-<linearGradient id="bd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#60A5FA" stop-opacity=".95"/><stop offset=".5" stop-color="#1E3A8A" stop-opacity=".45"/><stop offset="1" stop-color="#22D3EE" stop-opacity=".7"/></linearGradient>
-<linearGradient id="trail" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2563EB"/><stop offset="1" stop-color="#67E8F9"/></linearGradient>
-<linearGradient id="sheen" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#BFDBFE" stop-opacity=".35"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-<pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#1E3A8A" stroke-opacity=".2"/></pattern>
-<filter id="glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3.5"/></filter>
-<filter id="tb" x="-20%" y="-40%" width="140%" height="180%"><feGaussianBlur stdDeviation="7"/></filter>
-</defs>
-<rect x="1" y="1" width="{W - 2}" height="{H - 2}" rx="22" fill="url(#panel)" stroke="url(#bd)" stroke-width="1.5"/>
-<rect x="1" y="1" width="{W - 2}" height="{H - 2}" rx="22" fill="url(#grid)"/>
-<path d="M410 30V{H - 40}" stroke="#1E3A8A" stroke-opacity=".6" stroke-dasharray="3 7"/>
-{o}
-{travel(1, 1, W - 2, H - 2, 22, 14)}
+    o += f'<text class="m" x="860" y="46" text-anchor="end" font-size="11.5" fill="#7F93BA">{"awaiting first sync" if ph else "updated " + stamp + " UTC"}</text>'
+    css = (f"text{{font-family:{FONT}}}.m{{font-family:{MONO}}}"
+           "@keyframes in{from{opacity:0;transform:translateY(12px)}}@keyframes gr{from{transform:scaleX(0)}}@keyframes cl{from{opacity:0}}"
+           ".in{animation:in .9s cubic-bezier(.2,.8,.2,1) both}.grow{transform-box:fill-box;transform-origin:left center;animation:gr 1.6s cubic-bezier(.3,.7,.2,1) .5s both}"
+           ".col{animation:cl .6s ease both}@media (prefers-reduced-motion:reduce){*{animation:none!important}}")
+    label = 'GitHub stats: repositories, stars, followers, contributions, top languages and contribution heatmap'
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="{label}"><title>{label}</title>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#060A13"/><stop offset=".6" stop-color="#0A1330"/><stop offset="1" stop-color="#0F1D45"/></linearGradient>
+<linearGradient id="hl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#93C5FD" stop-opacity=".55"/><stop offset=".45" stop-color="#60A5FA" stop-opacity=".06"/><stop offset="1" stop-color="#22D3EE" stop-opacity=".35"/></linearGradient>
+<radialGradient id="aB"><stop offset="0" stop-color="#2563EB" stop-opacity=".5"/><stop offset="1" stop-color="#2563EB" stop-opacity="0"/></radialGradient>
+<radialGradient id="aC"><stop offset="0" stop-color="#22D3EE" stop-opacity=".3"/><stop offset="1" stop-color="#22D3EE" stop-opacity="0"/></radialGradient>
+<filter id="b8" x="-20%" y="-40%" width="140%" height="180%"><feGaussianBlur stdDeviation="9"/></filter>
+<clipPath id="sl"><rect width="{W}" height="{H}" rx="30"/></clipPath></defs>
+<style>{css}</style>
+<g clip-path="url(#sl)"><rect width="{W}" height="{H}" fill="url(#bg)"/><ellipse cx="820" cy="40" rx="360" ry="180" fill="url(#aC)"/><ellipse cx="60" cy="520" rx="400" ry="190" fill="url(#aB)"/>{o}</g>
+<rect x=".75" y=".75" width="{W - 1.5}" height="{H - 1.5}" rx="30" fill="none" stroke="url(#hl)" stroke-width="1.5"/>
 </svg>'''
 
 
