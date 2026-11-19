@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 44" width="240" height="44" role="img" aria-label="WEB DEVELOPMENT">
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0E1833"/><stop offset="1" stop-color="#080D1B"/>
+    </linearGradient>
+    <linearGradient id="bd" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#60A5FA" stop-opacity="0.95"/>
+      <stop offset="0.5" stop-color="#1E3A8A" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#22D3EE" stop-opacity="0.7"/>
+    </linearGradient>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#60A5FA"/><stop offset="1" stop-color="#2563EB"/>
+    </linearGradient>
+    <linearGradient id="tile" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1A2B5C"/><stop offset="1" stop-color="#0B1226"/>
+    </linearGradient>
+</defs>
+  <rect x="1" y="1" width="238" height="42" rx="21" fill="url(#panel)" stroke="url(#bd)" stroke-width="1.4"/>
+  <g transform="translate(16 11) scale(0.9166666666666666)" fill="none" stroke="#67E8F9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></g>
+  <text x="48" y="27.5" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="13" font-weight="800" letter-spacing="2.2" fill="#E5EDFF">WEB DEVELOPMENT</text>
+</svg>

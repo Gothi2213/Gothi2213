@@ -1,104 +1,119 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 360" width="1280" height="360" role="img" aria-label="Thiago Sarco - Software Developer in Training">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 400" width="1280" height="400" role="img" aria-label="Thiago Sarco - Software Developer in Training">
   <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0E1833"/><stop offset="1" stop-color="#080D1B"/>
+    </linearGradient>
+    <linearGradient id="bd" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#60A5FA" stop-opacity="0.95"/>
+      <stop offset="0.5" stop-color="#1E3A8A" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#22D3EE" stop-opacity="0.7"/>
+    </linearGradient>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#60A5FA"/><stop offset="1" stop-color="#2563EB"/>
+    </linearGradient>
+    <linearGradient id="tile" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1A2B5C"/><stop offset="1" stop-color="#0B1226"/>
+    </linearGradient>
+
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#070B14"/>
-      <stop offset="0.55" stop-color="#0B1226"/>
-      <stop offset="1" stop-color="#0F1D45"/>
+      <stop offset="0" stop-color="#060A13"/><stop offset="0.55" stop-color="#0A1226"/><stop offset="1" stop-color="#0F1D45"/>
     </linearGradient>
     <radialGradient id="orbA" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0" stop-color="#2563EB" stop-opacity="0.55"/>
-      <stop offset="1" stop-color="#2563EB" stop-opacity="0"/>
+      <stop offset="0" stop-color="#2563EB" stop-opacity="0.6"/><stop offset="1" stop-color="#2563EB" stop-opacity="0"/>
     </radialGradient>
     <radialGradient id="orbB" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0" stop-color="#60A5FA" stop-opacity="0.35"/>
-      <stop offset="1" stop-color="#60A5FA" stop-opacity="0"/>
+      <stop offset="0" stop-color="#22D3EE" stop-opacity="0.28"/><stop offset="1" stop-color="#22D3EE" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orbC" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6366F1" stop-opacity="0.3"/><stop offset="1" stop-color="#6366F1" stop-opacity="0"/>
     </radialGradient>
     <linearGradient id="name" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#FFFFFF"/>
-      <stop offset="0.6" stop-color="#DBEAFE"/>
-      <stop offset="1" stop-color="#93C5FD"/>
-    </linearGradient>
-    <linearGradient id="border" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#3B82F6" stop-opacity="0.9"/>
-      <stop offset="0.5" stop-color="#1E3A8A" stop-opacity="0.5"/>
-      <stop offset="1" stop-color="#60A5FA" stop-opacity="0.9"/>
-    </linearGradient>
-    <linearGradient id="fadeL" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#070B14" stop-opacity="0.95"/>
-      <stop offset="0.45" stop-color="#070B14" stop-opacity="0"/>
+      <stop offset="0" stop-color="#FFFFFF"/><stop offset="0.55" stop-color="#DBEAFE"/><stop offset="1" stop-color="#67E8F9"/>
     </linearGradient>
     <linearGradient id="scan" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#60A5FA" stop-opacity="0"/>
-      <stop offset="0.5" stop-color="#60A5FA" stop-opacity="0.35"/>
-      <stop offset="1" stop-color="#60A5FA" stop-opacity="0"/>
+      <stop offset="0" stop-color="#60A5FA" stop-opacity="0"/><stop offset="0.5" stop-color="#60A5FA" stop-opacity="0.22"/><stop offset="1" stop-color="#60A5FA" stop-opacity="0"/>
     </linearGradient>
     <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#2563EB"/>
-      <stop offset="1" stop-color="#60A5FA"/>
+      <stop offset="0" stop-color="#2563EB"/><stop offset="1" stop-color="#22D3EE"/>
     </linearGradient>
     <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M40 0H0V40" fill="none" stroke="#1E3A8A" stroke-opacity="0.28" stroke-width="1"/>
+      <path d="M40 0H0V40" fill="none" stroke="#1E3A8A" stroke-opacity="0.26"/>
     </pattern>
-    <clipPath id="card"><rect x="0" y="0" width="1280" height="360" rx="22"/></clipPath>
+    <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#60A5FA" fill-opacity="0.18"/>
+    </pattern>
+    <clipPath id="card"><rect width="1280" height="400" rx="24"/></clipPath>
+    <clipPath id="ln0"><rect x="24" y="60" width="0" height="26">
+        <animate attributeName="width" values="0;0;171;171;0" keyTimes="0;0.04;0.095;0.9;1" dur="14s" repeatCount="indefinite"/></rect></clipPath>
+<clipPath id="ln1"><rect x="44" y="88" width="0" height="26">
+        <animate attributeName="width" values="0;0;265;265;0" keyTimes="0;0.11;0.165;0.9;1" dur="14s" repeatCount="indefinite"/></rect></clipPath>
+<clipPath id="ln2"><rect x="44" y="114" width="0" height="26">
+        <animate attributeName="width" values="0;0;180;180;0" keyTimes="0;0.18;0.235;0.9;1" dur="14s" repeatCount="indefinite"/></rect></clipPath>
+<clipPath id="ln3"><rect x="64" y="140" width="0" height="26">
+        <animate attributeName="width" values="0;0;190;190;0" keyTimes="0;0.25;0.305;0.9;1" dur="14s" repeatCount="indefinite"/></rect></clipPath>
+<clipPath id="ln4"><rect x="44" y="166" width="0" height="26">
+        <animate attributeName="width" values="0;0;29;29;0" keyTimes="0;0.31;0.365;0.9;1" dur="14s" repeatCount="indefinite"/></rect></clipPath>
+<clipPath id="ln5"><rect x="44" y="192" width="0" height="26">
+        <animate attributeName="width" values="0;0;237;237;0" keyTimes="0;0.37;0.425;0.9;1" dur="14s" repeatCount="indefinite"/></rect></clipPath>
   </defs>
 
   <g clip-path="url(#card)">
-    <rect width="1280" height="360" fill="url(#bg)"/>
-    <rect width="1280" height="360" fill="url(#grid)"/>
+    <rect width="1280" height="400" fill="url(#bg)"/>
+    <rect width="1280" height="400" fill="url(#grid)"/>
+    <rect x="560" width="720" height="400" fill="url(#dots)"/>
 
-    <circle cx="1080" cy="90" r="330" fill="url(#orbA)">
-      <animate attributeName="opacity" values="0.75;1;0.75" dur="6s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="520" cy="420" r="300" fill="url(#orbB)">
-      <animate attributeName="opacity" values="1;0.6;1" dur="7s" repeatCount="indefinite"/>
-    </circle>
+    <circle cx="1090" cy="80" r="360" fill="url(#orbA)"><animate attributeName="opacity" values="0.7;1;0.7" dur="6s" repeatCount="indefinite"/></circle>
+    <circle cx="470" cy="450" r="300" fill="url(#orbB)"><animate attributeName="opacity" values="1;0.55;1" dur="7s" repeatCount="indefinite"/></circle>
+    <circle cx="-20" cy="120" r="260" fill="url(#orbC)"><animate attributeName="opacity" values="0.6;1;0.6" dur="8s" repeatCount="indefinite"/></circle>
 
-    <rect x="-300" y="0" width="300" height="360" fill="url(#scan)">
-      <animate attributeName="x" values="-300;1280" dur="9s" repeatCount="indefinite"/>
-    </rect>
+    <rect x="-300" y="0" width="300" height="400" fill="url(#scan)"><animate attributeName="x" values="-300;1280" dur="10s" repeatCount="indefinite"/></rect>
 
-    <!-- decorative dots -->
-    <g fill="#60A5FA" fill-opacity="0.55">
-      <circle cx="610" cy="60" r="2.5"/><circle cx="650" cy="60" r="2.5"/><circle cx="690" cy="60" r="2.5"/>
-      <circle cx="610" cy="100" r="2.5"/><circle cx="650" cy="100" r="2.5"/><circle cx="690" cy="100" r="2.5"/>
-    </g>
+    <path d="M0 372 H120 L152 340 H470 L500 372 H640" fill="none" stroke="#1E3A8A" stroke-opacity="0.55" stroke-width="1.6"/><path d="M0 372 H120 L152 340 H470 L500 372 H640" fill="none" stroke="#67E8F9" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="14 190"><animate attributeName="stroke-dashoffset" values="204;0" dur="5s" begin="0s" repeatCount="indefinite"/></path>
+    <path d="M1280 372 H1130 L1100 342 H900" fill="none" stroke="#1E3A8A" stroke-opacity="0.55" stroke-width="1.6"/><path d="M1280 372 H1130 L1100 342 H900" fill="none" stroke="#67E8F9" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="14 190"><animate attributeName="stroke-dashoffset" values="204;0" dur="6s" begin="1.5s" repeatCount="indefinite"/></path>
+    <path d="M0 30 H90 L120 60 H300" fill="none" stroke="#1E3A8A" stroke-opacity="0.55" stroke-width="1.6"/><path d="M0 30 H90 L120 60 H300" fill="none" stroke="#67E8F9" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="14 190"><animate attributeName="stroke-dashoffset" values="204;0" dur="6s" begin="2.5s" repeatCount="indefinite"/></path>
+    <path d="M1280 40 H1180 L1150 12" fill="none" stroke="#1E3A8A" stroke-opacity="0.55" stroke-width="1.6"/><path d="M1280 40 H1180 L1150 12" fill="none" stroke="#67E8F9" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="14 190"><animate attributeName="stroke-dashoffset" values="204;0" dur="4s" begin="0.8s" repeatCount="indefinite"/></path>
+    <circle cx="640" cy="372" r="3.5" fill="#0B1226" stroke="#60A5FA" stroke-width="1.6"/><circle cx="900" cy="342" r="3.5" fill="#0B1226" stroke="#60A5FA" stroke-width="1.6"/><circle cx="300" cy="60" r="3.5" fill="#0B1226" stroke="#60A5FA" stroke-width="1.6"/><circle cx="1150" cy="12" r="3.5" fill="#0B1226" stroke="#60A5FA" stroke-width="1.6"/>
+    <text x="640" y="90" font-family="'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace" font-size="34" font-weight="700" fill="#60A5FA" fill-opacity="0.22">{ }<animateTransform attributeName="transform" type="translate" values="0 0;0 12;0 0" dur="7s" repeatCount="indefinite"/></text>
+    <text x="735" y="330" font-family="'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace" font-size="30" font-weight="700" fill="#60A5FA" fill-opacity="0.2">&lt;/&gt;<animateTransform attributeName="transform" type="translate" values="0 0;0 -14;0 0" dur="9s" repeatCount="indefinite"/></text>
+    <text x="600" y="250" font-family="'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace" font-size="40" font-weight="700" fill="#60A5FA" fill-opacity="0.16">;<animateTransform attributeName="transform" type="translate" values="0 0;0 10;0 0" dur="8s" repeatCount="indefinite"/></text>
+    <text x="800" y="60" font-family="'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace" font-size="26" font-weight="700" fill="#60A5FA" fill-opacity="0.2">[ ]<animateTransform attributeName="transform" type="translate" values="0 0;0 9;0 0" dur="6.5s" repeatCount="indefinite"/></text>
+    <text x="690" y="190" font-family="'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace" font-size="28" font-weight="700" fill="#60A5FA" fill-opacity="0.17">=&gt;<animateTransform attributeName="transform" type="translate" values="0 0;0 -11;0 0" dur="10s" repeatCount="indefinite"/></text>
+    <text x="1240" y="120" font-family="'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace" font-size="26" font-weight="700" fill="#60A5FA" fill-opacity="0.18">01<animateTransform attributeName="transform" type="translate" values="0 0;0 12;0 0" dur="8.5s" repeatCount="indefinite"/></text>
+    <text x="560" y="345" font-family="'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace" font-size="26" font-weight="700" fill="#60A5FA" fill-opacity="0.15">&amp;&amp;<animateTransform attributeName="transform" type="translate" values="0 0;0 -9;0 0" dur="7.5s" repeatCount="indefinite"/></text>
+    <text x="1235" y="330" font-family="'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace" font-size="30" font-weight="700" fill="#60A5FA" fill-opacity="0.2">()<animateTransform attributeName="transform" type="translate" values="0 0;0 -12;0 0" dur="9.5s" repeatCount="indefinite"/></text>
+    <text x="520" y="60" font-family="'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace" font-size="28" font-weight="700" fill="#60A5FA" fill-opacity="0.15">#<animateTransform attributeName="transform" type="translate" values="0 0;0 8;0 0" dur="6s" repeatCount="indefinite"/></text>
 
     <!-- status pill -->
-    <rect x="72" y="62" width="262" height="34" rx="17" fill="#0E1A3A" stroke="#2563EB" stroke-opacity="0.8"/>
-    <circle cx="94" cy="79" r="5" fill="#34D399">
-      <animate attributeName="opacity" values="1;0.25;1" dur="2s" repeatCount="indefinite"/>
-    </circle>
-    <text x="110" y="84" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="12.5" font-weight="700" letter-spacing="2.4" fill="#BFDBFE">OPEN TO OPPORTUNITIES</text>
+    <rect x="72" y="62" width="268" height="36" rx="18" fill="#0E1A3A" stroke="#22D3EE" stroke-opacity="0.55"/>
+    <circle cx="95" cy="80" r="5" fill="#34D399"><animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite"/></circle>
+    <circle cx="95" cy="80" r="5" fill="none" stroke="#34D399"><animate attributeName="r" values="5;12" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.8;0" dur="2s" repeatCount="indefinite"/></circle>
+    <text x="113" y="85" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="12.5" font-weight="700" letter-spacing="2.4" fill="#BFDBFE">OPEN TO OPPORTUNITIES</text>
 
     <!-- name -->
-    <text x="68" y="188" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="78" font-weight="800" letter-spacing="3" fill="url(#name)">THIAGO SARCO</text>
-    <rect x="72" y="208" width="96" height="5" rx="2.5" fill="url(#bar)"/>
-    <rect x="178" y="208" width="14" height="5" rx="2.5" fill="#2563EB" fill-opacity="0.6"/>
-    <rect x="202" y="208" width="6" height="5" rx="2.5" fill="#2563EB" fill-opacity="0.35"/>
-
-    <text x="72" y="256" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="23" font-weight="600" letter-spacing="7" fill="#60A5FA">SOFTWARE DEVELOPER IN TRAINING</text>
-    <text x="72" y="298" font-family="'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace" font-size="16" letter-spacing="1" fill="#8B9BB4">Java  /  JavaScript  /  SQL  /  Web Development</text>
+    <text x="68" y="196" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="80" font-weight="800" letter-spacing="3" fill="url(#name)">THIAGO SARCO</text>
+    <rect x="72" y="218" width="110" height="5" rx="2.5" fill="url(#bar)"/>
+    <rect x="192" y="218" width="16" height="5" rx="2.5" fill="#22D3EE" fill-opacity="0.6"/>
+    <rect x="218" y="218" width="6" height="5" rx="2.5" fill="#22D3EE" fill-opacity="0.35"/>
+    <text x="72" y="268" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="23" font-weight="600" letter-spacing="7" fill="#60A5FA">SOFTWARE DEVELOPER IN TRAINING</text>
+    <rect x="72" y="298" width="66" height="32" rx="16" fill="#0E1A3A" stroke="#2563EB" stroke-opacity="0.65"/><text x="105.0" y="319" text-anchor="middle" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#BFDBFE">Java</text><rect x="150" y="298" width="112" height="32" rx="16" fill="#0E1A3A" stroke="#2563EB" stroke-opacity="0.65"/><text x="206.0" y="319" text-anchor="middle" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#BFDBFE">JavaScript</text><rect x="274" y="298" width="58" height="32" rx="16" fill="#0E1A3A" stroke="#2563EB" stroke-opacity="0.65"/><text x="303.0" y="319" text-anchor="middle" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#BFDBFE">SQL</text><rect x="344" y="298" width="156" height="32" rx="16" fill="#0E1A3A" stroke="#2563EB" stroke-opacity="0.65"/><text x="422.0" y="319" text-anchor="middle" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#BFDBFE">Web Development</text>
 
     <!-- code window -->
-    <g transform="translate(850 66)">
-      <rect width="360" height="252" rx="14" fill="#0A1124" fill-opacity="0.92" stroke="url(#border)" stroke-width="1.5"/>
-      <path d="M0 14a14 14 0 0 1 14-14h332a14 14 0 0 1 14 14v26H0z" fill="#101B38"/>
-      <circle cx="24" cy="20" r="5.5" fill="#3B82F6"/>
-      <circle cx="44" cy="20" r="5.5" fill="#60A5FA" fill-opacity="0.7"/>
-      <circle cx="64" cy="20" r="5.5" fill="#93C5FD" fill-opacity="0.45"/>
-      <text x="180" y="25" font-family="'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace" font-size="12" fill="#6B7C99">developer.java</text>
+    <g transform="translate(850 70)">
+      <ellipse cx="180" cy="130" rx="230" ry="150" fill="url(#orbA)" opacity="0.5"/>
+      <rect width="360" height="262" rx="16" fill="#0A1124" fill-opacity="0.94" stroke="url(#bd)" stroke-width="1.6"/>
+      <path d="M0 16a16 16 0 0 1 16-16h328a16 16 0 0 1 16 16v26H0z" fill="#101B38"/>
+      <circle cx="26" cy="21" r="5.5" fill="#3B82F6"/><circle cx="46" cy="21" r="5.5" fill="#22D3EE" fill-opacity="0.75"/><circle cx="66" cy="21" r="5.5" fill="#93C5FD" fill-opacity="0.45"/>
+      <text x="334" y="26" text-anchor="end" font-family="'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace" font-size="12" fill="#6B7C99">developer.java</text>
       <g font-family="'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace" font-size="15.5">
-        <text x="24" y="72"><tspan fill="#60A5FA">class</tspan><tspan fill="#E5EDFF"> Developer </tspan><tspan fill="#8B9BB4">{</tspan></text>
-        <text x="44" y="100"><tspan fill="#60A5FA">String</tspan><tspan fill="#E5EDFF"> status = </tspan><tspan fill="#93C5FD">"learning"</tspan><tspan fill="#8B9BB4">;</tspan></text>
-        <text x="44" y="126"><tspan fill="#60A5FA">String</tspan><tspan fill="#8B9BB4">[]</tspan><tspan fill="#E5EDFF"> stack = </tspan><tspan fill="#8B9BB4">{</tspan></text>
-        <text x="64" y="152"><tspan fill="#93C5FD">"Java"</tspan><tspan fill="#8B9BB4">, </tspan><tspan fill="#93C5FD">"JS"</tspan><tspan fill="#8B9BB4">, </tspan><tspan fill="#93C5FD">"SQL"</tspan></text>
-        <text x="44" y="178"><tspan fill="#8B9BB4">};</tspan></text>
-        <text x="44" y="204"><tspan fill="#60A5FA">void</tspan><tspan fill="#E5EDFF"> grow</tspan><tspan fill="#8B9BB4">()</tspan><tspan fill="#E5EDFF"> </tspan><tspan fill="#8B9BB4">{ build(); }</tspan></text>
+        <text x="24" y="78" clip-path="url(#ln0)"><tspan fill="#60A5FA">class</tspan><tspan fill="#E5EDFF"> Developer </tspan><tspan fill="#8B9BB4">{</tspan></text>
+        <text x="44" y="106" clip-path="url(#ln1)"><tspan fill="#60A5FA">String</tspan><tspan fill="#E5EDFF"> status = </tspan><tspan fill="#67E8F9">"learning"</tspan><tspan fill="#8B9BB4">;</tspan></text>
+        <text x="44" y="132" clip-path="url(#ln2)"><tspan fill="#60A5FA">String</tspan><tspan fill="#8B9BB4">[]</tspan><tspan fill="#E5EDFF"> stack = </tspan><tspan fill="#8B9BB4">{</tspan></text>
+        <text x="64" y="158" clip-path="url(#ln3)"><tspan fill="#67E8F9">"Java"</tspan><tspan fill="#8B9BB4">, </tspan><tspan fill="#67E8F9">"JS"</tspan><tspan fill="#8B9BB4">, </tspan><tspan fill="#67E8F9">"SQL"</tspan></text>
+        <text x="44" y="184" clip-path="url(#ln4)"><tspan fill="#8B9BB4">};</tspan></text>
+        <text x="44" y="210" clip-path="url(#ln5)"><tspan fill="#60A5FA">void</tspan><tspan fill="#E5EDFF"> grow</tspan><tspan fill="#8B9BB4">() { build(); }</tspan></text>
       </g>
-      <rect x="44" y="216" width="9" height="18" fill="#60A5FA">
-        <animate attributeName="opacity" values="1;0;1" dur="1.1s" repeatCount="indefinite"/>
-      </rect>
+      <rect x="44" y="226" width="9" height="18" fill="#22D3EE"><animate attributeName="opacity" values="1;0;1" dur="1.1s" repeatCount="indefinite"/></rect>
     </g>
   </g>
-  <rect x="1" y="1" width="1278" height="358" rx="21" fill="none" stroke="url(#border)" stroke-width="1.5"/>
+  <rect x="1" y="1" width="1278" height="398" rx="23" fill="none" stroke="url(#bd)" stroke-width="1.6"/>
 </svg>

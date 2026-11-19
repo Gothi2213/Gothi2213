@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 112" width="400" height="112" role="img" aria-label="EMAIL">
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0E1833"/><stop offset="1" stop-color="#080D1B"/>
+    </linearGradient>
+    <linearGradient id="bd" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#60A5FA" stop-opacity="0.95"/>
+      <stop offset="0.5" stop-color="#1E3A8A" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#22D3EE" stop-opacity="0.7"/>
+    </linearGradient>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#60A5FA"/><stop offset="1" stop-color="#2563EB"/>
+    </linearGradient>
+    <linearGradient id="tile" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1A2B5C"/><stop offset="1" stop-color="#0B1226"/>
+    </linearGradient>
+
+    <radialGradient id="gl" cx="0" cy="0" r="1"><stop offset="0" stop-color="#2563EB" stop-opacity="0.35"/><stop offset="1" stop-color="#2563EB" stop-opacity="0"/></radialGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2563EB"/><stop offset="1" stop-color="#22D3EE"/></linearGradient>
+  </defs>
+  <rect x="1" y="1" width="398" height="110" rx="20" fill="url(#panel)" stroke="url(#bd)" stroke-width="1.5"/>
+  <rect x="1" y="1" width="398" height="110" rx="20" fill="url(#gl)"/>
+  <rect x="24" y="24" width="64" height="64" rx="18" fill="url(#tile)" stroke="#2563EB" stroke-opacity="0.75"/>
+  <g transform="translate(40 40) scale(1.3333333333333333)" fill="none" stroke="#93C5FD" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></g>
+  <text x="108" y="50" font-family="'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace" font-size="12.5" letter-spacing="3" fill="#22D3EE">EMAIL</text>
+  <text x="108" y="76" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="19" font-weight="700" fill="#FFFFFF">thiagosarco13@gmail.com</text>
+  <rect x="108" y="88" width="40" height="3" rx="1.5" fill="url(#bar)"/>
+</svg>

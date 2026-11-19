@@ -1,32 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 150" width="1280" height="150" role="img" aria-label="Thiago Sarco">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 190" width="1280" height="190" role="img" aria-label="Thiago Sarco">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#070B14"/>
-      <stop offset="1" stop-color="#0F1D45"/>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0E1833"/><stop offset="1" stop-color="#080D1B"/>
     </linearGradient>
-    <radialGradient id="g" cx="0.5" cy="1" r="0.6">
-      <stop offset="0" stop-color="#2563EB" stop-opacity="0.6"/>
-      <stop offset="1" stop-color="#2563EB" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="bd" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#1E3A8A" stop-opacity="0.4"/>
-      <stop offset="0.5" stop-color="#60A5FA" stop-opacity="0.9"/>
-      <stop offset="1" stop-color="#1E3A8A" stop-opacity="0.4"/>
+    <linearGradient id="bd" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#60A5FA" stop-opacity="0.95"/>
+      <stop offset="0.5" stop-color="#1E3A8A" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#22D3EE" stop-opacity="0.7"/>
     </linearGradient>
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M40 0H0V40" fill="none" stroke="#1E3A8A" stroke-opacity="0.25"/>
-    </pattern>
-    <clipPath id="c"><rect width="1280" height="150" rx="20"/></clipPath>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#60A5FA"/><stop offset="1" stop-color="#2563EB"/>
+    </linearGradient>
+    <linearGradient id="tile" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1A2B5C"/><stop offset="1" stop-color="#0B1226"/>
+    </linearGradient>
+
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#060A13"/><stop offset="1" stop-color="#0F1D45"/></linearGradient>
+    <radialGradient id="g" cx="0.5" cy="1" r="0.6"><stop offset="0" stop-color="#2563EB" stop-opacity="0.55"/><stop offset="1" stop-color="#2563EB" stop-opacity="0"/></radialGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2563EB" stop-opacity="0"/><stop offset="0.5" stop-color="#22D3EE"/><stop offset="1" stop-color="#2563EB" stop-opacity="0"/></linearGradient>
+    <linearGradient id="name" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#93C5FD"/></linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#1E3A8A" stroke-opacity="0.24"/></pattern>
+    <clipPath id="c"><rect width="1280" height="190" rx="22"/></clipPath>
   </defs>
   <g clip-path="url(#c)">
-    <rect width="1280" height="150" fill="url(#bg)"/>
-    <rect width="1280" height="150" fill="url(#grid)"/>
-    <ellipse cx="640" cy="170" rx="520" ry="120" fill="url(#g)">
-      <animate attributeName="opacity" values="0.7;1;0.7" dur="5s" repeatCount="indefinite"/>
-    </ellipse>
-    <text x="640" y="68" text-anchor="middle" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="30" font-weight="800" letter-spacing="8" fill="#FFFFFF">THIAGO SARCO</text>
-    <text x="640" y="98" text-anchor="middle" font-family="'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace" font-size="14" letter-spacing="3" fill="#8B9BB4">LEARNING BY BUILDING  //  ARGENTINA</text>
-    <rect x="540" y="116" width="200" height="3" rx="1.5" fill="url(#bd)"/>
+    <rect width="1280" height="190" fill="url(#bg)"/>
+    <rect width="1280" height="190" fill="url(#grid)"/>
+    <ellipse cx="640" cy="215" rx="560" ry="130" fill="url(#g)"><animate attributeName="opacity" values="0.65;1;0.65" dur="5s" repeatCount="indefinite"/></ellipse>
+    <path d="M-320 150 q80 -16 160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0" fill="none" stroke="#60A5FA" stroke-opacity="0.55" stroke-width="2"><animateTransform attributeName="transform" type="translate" values="0 0;-320 0" dur="9s" repeatCount="indefinite"/></path>
+    <path d="M-320 158 q80 -12 160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0" fill="none" stroke="#22D3EE" stroke-opacity="0.4" stroke-width="2"><animateTransform attributeName="transform" type="translate" values="60 0;-260 0" dur="13s" repeatCount="indefinite"/></path>
+    <path d="M-320 166 q80 -9 160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0" fill="none" stroke="#2563EB" stroke-opacity="0.3" stroke-width="2"><animateTransform attributeName="transform" type="translate" values="120 0;-200 0" dur="17s" repeatCount="indefinite"/></path>
+    <text x="640" y="64" text-anchor="middle" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="32" font-weight="800" letter-spacing="9" fill="url(#name)">THIAGO SARCO</text>
+    <text x="640" y="94" text-anchor="middle" font-family="'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace" font-size="14" letter-spacing="3.5" fill="#8B9BB4">LEARNING BY BUILDING  //  ARGENTINA</text>
+    <rect x="490" y="108" width="300" height="3" rx="1.5" fill="url(#bar)"/>
   </g>
-  <rect x="1" y="1" width="1278" height="148" rx="19" fill="none" stroke="url(#bd)" stroke-width="1.5"/>
+  <rect x="1" y="1" width="1278" height="188" rx="21" fill="none" stroke="url(#bd)" stroke-width="1.5"/>
 </svg>

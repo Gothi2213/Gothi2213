@@ -9,7 +9,7 @@
 <img src="https://img.shields.io/badge/Software%20Development-172554?style=for-the-badge&logo=codeforces&logoColor=white" alt="Software Development"/>
 <img src="https://img.shields.io/badge/Open%20to-Opportunities-2563EB?style=for-the-badge&logo=handshake&logoColor=white" alt="Open to opportunities"/>
 
-<br/><br/>
+<br/><br/><br/>
 
 <img src="./assets/sec-about.svg" width="100%" alt="About Me"/>
 
@@ -27,16 +27,16 @@
   </tr>
 </table>
 
-<br/>
+<br/><br/>
 
 <img src="./assets/sec-stack.svg" width="100%" alt="Technologies and Tools"/>
 
 <table align="center">
   <tr>
-    <td align="center" width="25%"><b>Programming</b></td>
-    <td align="center" width="25%"><b>Web Development</b></td>
-    <td align="center" width="25%"><b>Databases</b></td>
-    <td align="center" width="25%"><b>Development Tools</b></td>
+    <td align="center" width="25%"><br/><img src="./assets/pill-programming.svg" width="220" alt="Programming"/></td>
+    <td align="center" width="25%"><br/><img src="./assets/pill-web.svg" width="220" alt="Web Development"/></td>
+    <td align="center" width="25%"><br/><img src="./assets/pill-databases.svg" width="220" alt="Databases"/></td>
+    <td align="center" width="25%"><br/><img src="./assets/pill-tools.svg" width="220" alt="Dev Tools"/></td>
   </tr>
   <tr>
     <td align="center"><br/><img src="https://skillicons.dev/icons?i=java,js,cpp&perline=3&theme=dark" alt="Java, JavaScript, C++"/><br/><sub>Java &middot; JavaScript &middot; C++</sub><br/><br/></td>
@@ -46,7 +46,7 @@
   </tr>
 </table>
 
-<br/>
+<br/><br/>
 
 <img src="./assets/sec-focus.svg" width="100%" alt="Current Focus"/>
 
@@ -111,7 +111,7 @@
   </tr>
 </table>
 
-<br/>
+<br/><br/>
 
 <img src="./assets/sec-learning.svg" width="100%" alt="Currently Learning"/>
 
@@ -170,52 +170,19 @@
   </tr>
 </table>
 
-<br/>
+<br/><br/>
 
 <img src="./assets/sec-mindset.svg" width="100%" alt="Development Mindset"/>
 
-<table align="center">
-  <tr>
-    <td align="center" width="25%">
-      <br/>
-      <img src="./assets/icon-search.svg" width="56" height="56" alt="search"/>
-      <br/><br/>
-      <b>Understand</b>
-      <br/>
-      <sub>Analyze the problem<br/>before writing the solution</sub>
-      <br/><br/>
-    </td>
-    <td align="center" width="25%">
-      <br/>
-      <img src="./assets/icon-build.svg" width="56" height="56" alt="build"/>
-      <br/><br/>
-      <b>Build</b>
-      <br/>
-      <sub>Turn ideas into<br/>functional software</sub>
-      <br/><br/>
-    </td>
-    <td align="center" width="25%">
-      <br/>
-      <img src="./assets/icon-refresh.svg" width="56" height="56" alt="refresh"/>
-      <br/><br/>
-      <b>Improve</b>
-      <br/>
-      <sub>Learn from mistakes<br/>and refine the solution</sub>
-      <br/><br/>
-    </td>
-    <td align="center" width="25%">
-      <br/>
-      <img src="./assets/icon-growth.svg" width="56" height="56" alt="growth"/>
-      <br/><br/>
-      <b>Grow</b>
-      <br/>
-      <sub>Keep learning and take<br/>on new challenges</sub>
-      <br/><br/>
-    </td>
-  </tr>
-</table>
+<img src="./assets/cards-mindset.svg" width="100%" alt="Understand, Build, Improve, Grow"/>
 
-<br/>
+<br/><br/>
+
+<img src="./assets/sec-roadmap.svg" width="100%" alt="Roadmap"/>
+
+<img src="./assets/roadmap.svg" width="100%" alt="Learn, Build, Collaborate, First experience"/>
+
+<br/><br/>
 
 <img src="./assets/sec-objective.svg" width="100%" alt="Professional Objective"/>
 
@@ -225,48 +192,9 @@
   I'm interested in joining a team where I can:
 </p>
 
-<table align="center">
-  <tr>
-    <td align="center" width="25%">
-      <br/>
-      <img src="./assets/icon-learn.svg" width="56" height="56" alt="learn"/>
-      <br/><br/>
-      <b>Learn</b>
-      <br/>
-      <sub>From experienced developers</sub>
-      <br/><br/>
-    </td>
-    <td align="center" width="25%">
-      <br/>
-      <img src="./assets/icon-team.svg" width="56" height="56" alt="team"/>
-      <br/><br/>
-      <b>Collaborate</b>
-      <br/>
-      <sub>As part of a team</sub>
-      <br/><br/>
-    </td>
-    <td align="center" width="25%">
-      <br/>
-      <img src="./assets/icon-code.svg" width="56" height="56" alt="code"/>
-      <br/><br/>
-      <b>Contribute</b>
-      <br/>
-      <sub>Applying my technical knowledge</sub>
-      <br/><br/>
-    </td>
-    <td align="center" width="25%">
-      <br/>
-      <img src="./assets/icon-growth.svg" width="56" height="56" alt="growth"/>
-      <br/><br/>
-      <b>Grow</b>
-      <br/>
-      <sub>Continue improving</sub>
-      <br/><br/>
-    </td>
-  </tr>
-</table>
+<img src="./assets/cards-objective.svg" width="100%" alt="Learn, Collaborate, Contribute, Grow"/>
 
-<br/>
+<br/><br/>
 
 <img src="./assets/sec-languages.svg" width="100%" alt="Languages"/>
 
@@ -276,7 +204,7 @@
   <img src="https://img.shields.io/badge/English-Improving-2563EB?style=for-the-badge&logo=googletranslate&logoColor=white" alt="English - Improving"/>
 </p>
 
-<br/>
+<br/><br/>
 
 <img src="./assets/sec-stats.svg" width="100%" alt="GitHub Stats"/>
 
@@ -290,14 +218,15 @@
   <img width="96%" src="https://github-readme-activity-graph.vercel.app/graph?username=Gothi2213&bg_color=0D1117&color=60A5FA&line=2563EB&point=FFFFFF&area=true&area_color=2563EB&hide_border=true&radius=14" alt="Contribution activity"/>
 </p>
 
-<br/>
+<br/><br/>
 
 <img src="./assets/sec-connect.svg" width="100%" alt="Let's Connect"/>
 
 <p align="center">
   <br/>
-  <a href="https://github.com/Gothi2213"><img src="https://img.shields.io/badge/GitHub-Gothi2213-0D1117?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>
-  <a href="mailto:thiagosarco13@gmail.com"><img src="https://img.shields.io/badge/Email-Contact%20Me-0D1117?style=for-the-badge&logo=gmail&logoColor=EA4335" alt="Email"/></a>
+  <a href="https://github.com/Gothi2213"><img src="./assets/connect-github.svg" width="32%" alt="GitHub - Gothi2213"/></a>
+  <a href="mailto:thiagosarco13@gmail.com"><img src="./assets/connect-mail.svg" width="32%" alt="Email - thiagosarco13@gmail.com"/></a>
+  <img src="./assets/connect-location.svg" width="32%" alt="Location - Argentina"/>
 </p>
 
 <br/>
