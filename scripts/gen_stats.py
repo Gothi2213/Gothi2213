@@ -9,7 +9,7 @@ import json, math, os, sys, html, datetime, urllib.request
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'assets', 'stats.svg')
 FONT = "'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif"
 MONO = "'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace"
-PALETTE = ['#22D3EE', '#60A5FA', '#A78BFA', '#4ADE80', '#FBBF24', '#F472B6', '#94A3B8']
+PALETTE = ['#F97316', '#FB7185', '#F472B6', '#4ADE80', '#FBBF24', '#F472B6', '#94A3B8']
 esc = lambda s: html.escape(str(s), quote=False)
 
 
@@ -59,21 +59,21 @@ def render(d):
     W, H = 900, 500
     ph = d is None
     fmt = lambda v: '--' if ph else f'{v:,}'
-    big = [('REPOSITORIES', 'repos', '#60A5FA'), ('STARS', 'stars', '#22D3EE'), ('FOLLOWERS', 'followers', '#A78BFA'), ('CONTRIBUTIONS', 'total', '#4ADE80')]
+    big = [('REPOSITORIES', 'repos', '#FB7185'), ('STARS', 'stars', '#F97316'), ('FOLLOWERS', 'followers', '#F472B6'), ('CONTRIBUTIONS', 'total', '#4ADE80')]
     small = [('commits / year', 'commits'), ('pull requests', 'prs'), ('issues', 'issues'), ('code reviews', 'reviews')]
-    o = (f'<text class="m" x="40" y="46" font-size="13" fill="#22D3EE" letter-spacing="3">08 &#8212; LIVE FROM THE GITHUB API</text>')
+    o = (f'<text class="m" x="40" y="46" font-size="13" fill="#F97316" letter-spacing="3">08 &#8212; LIVE FROM THE GITHUB API</text>')
     for i, (lab, key, col) in enumerate(big):
         x = 40 + i * 215
         if i:
-            o += f'<path d="M{x - 22},72V150" stroke="#93C5FD" stroke-opacity=".18"/>'
+            o += f'<path d="M{x - 22},72V150" stroke="#FDA4AF" stroke-opacity=".18"/>'
         o += (f'<g class="in" style="animation-delay:{.1 + i * .12:.2f}s"><text class="m" x="{x}" y="86" font-size="12" letter-spacing="2.4" fill="{col}">{lab}</text>'
               f'<text x="{x}" y="140" font-size="58" font-weight="800" fill="{col}" filter="url(#b8)" opacity=".45">{fmt(d[key]) if d else "--"}</text>'
               f'<text x="{x}" y="140" font-size="58" font-weight="800" fill="#F1F6FF">{fmt(d[key]) if d else "--"}</text></g>')
     for i, (lab, key) in enumerate(small):
         x = 40 + i * 215
-        o += (f'<g class="in" style="animation-delay:{.5 + i * .1:.2f}s"><text x="{x}" y="190" font-size="22" font-weight="700" fill="#DBEAFE">{fmt(d[key]) if d else "--"}</text>'
-              f'<text class="m" x="{x + (len(fmt(d[key]) if d else "--") * 13 + 10)}" y="189" font-size="12.5" fill="#7F93BA">{lab}</text></g>')
-    o += '<path d="M40,214H860" stroke="#93C5FD" stroke-opacity=".15"/>'
+        o += (f'<g class="in" style="animation-delay:{.5 + i * .1:.2f}s"><text x="{x}" y="190" font-size="22" font-weight="700" fill="#FFE4E6">{fmt(d[key]) if d else "--"}</text>'
+              f'<text class="m" x="{x + (len(fmt(d[key]) if d else "--") * 13 + 10)}" y="189" font-size="12.5" fill="#B08A93">{lab}</text></g>')
+    o += '<path d="M40,214H860" stroke="#FDA4AF" stroke-opacity=".15"/>'
     # languages ribbon
     langs = []
     if d and d['langs']:
@@ -83,8 +83,8 @@ def render(d):
         rest = sum(v for _, v in items[6:])
         if rest:
             langs.append(('Other', rest / tot))
-    o += '<text class="m" x="40" y="246" font-size="12" letter-spacing="2.4" fill="#22D3EE">TOP LANGUAGES</text>'
-    o += '<clipPath id="lc"><rect x="40" y="258" width="820" height="14" rx="7"/></clipPath><rect x="40" y="258" width="820" height="14" rx="7" fill="#0A1330" stroke="#1E3A8A"/>'
+    o += '<text class="m" x="40" y="246" font-size="12" letter-spacing="2.4" fill="#F97316">TOP LANGUAGES</text>'
+    o += '<clipPath id="lc"><rect x="40" y="258" width="820" height="14" rx="7"/></clipPath><rect x="40" y="258" width="820" height="14" rx="7" fill="#16070E" stroke="#7F1D1D"/>'
     if langs:
         x, seg = 40, ''
         for i, (k, p) in enumerate(langs):
@@ -94,36 +94,36 @@ def render(d):
         o += f'<g clip-path="url(#lc)"><g class="grow">{seg}</g></g>'
         for i, (k, p) in enumerate(langs):
             lx, ly = 40 + (i % 4) * 205, 304 + (i // 4) * 26
-            o += (f'<circle cx="{lx + 5}" cy="{ly - 5}" r="4.5" fill="{PALETTE[i % len(PALETTE)]}"/><text x="{lx + 17}" y="{ly}" font-size="15" font-weight="600" fill="#DBEAFE">{esc(k)}</text>'
-                  f'<text x="{lx + 185}" y="{ly}" text-anchor="end" class="m" font-size="12.5" fill="#7F93BA">{p * 100:.1f}%</text>')
+            o += (f'<circle cx="{lx + 5}" cy="{ly - 5}" r="4.5" fill="{PALETTE[i % len(PALETTE)]}"/><text x="{lx + 17}" y="{ly}" font-size="15" font-weight="600" fill="#FFE4E6">{esc(k)}</text>'
+                  f'<text x="{lx + 185}" y="{ly}" text-anchor="end" class="m" font-size="12.5" fill="#B08A93">{p * 100:.1f}%</text>')
     else:
-        o += '<text class="m" x="40" y="304" font-size="13" fill="#7F93BA">// languages appear after the first sync with GitHub</text>'
+        o += '<text class="m" x="40" y="304" font-size="13" fill="#B08A93">// languages appear after the first sync with GitHub</text>'
     # heatmap
     weeks = d['weeks'][-53:] if d else [[0] * 7 for _ in range(53)]
     mx = max([max(w) for w in weeks] + [1])
-    cols = ['#0E1A3A', '#1E3A8A', '#2563EB', '#60A5FA', '#67E8F9']
+    cols = ['#1A0A10', '#7F1D1D', '#DC2626', '#FB7185', '#FDBA74']
     lvl = lambda n: 0 if n == 0 else min(4, 1 + int(3.999 * n / mx))
-    o += '<text class="m" x="40" y="366" font-size="12" letter-spacing="2.4" fill="#22D3EE">CONTRIBUTIONS / LAST 12 MONTHS</text>'
+    o += '<text class="m" x="40" y="366" font-size="12" letter-spacing="2.4" fill="#F97316">CONTRIBUTIONS / LAST 12 MONTHS</text>'
     for wi, wk in enumerate(weeks):
-        cells = ''.join(f'<rect x="{40 + wi * 15.5:.1f}" y="{380 + di * 15}" width="12" height="12" rx="3" fill="{cols[lvl(n)]}"{" stroke=\"#16294F\"" if n == 0 else ""}/>' for di, n in enumerate(wk))
+        cells = ''.join(f'<rect x="{40 + wi * 15.5:.1f}" y="{380 + di * 15}" width="12" height="12" rx="3" fill="{cols[lvl(n)]}"{" stroke=\"#2B1119\"" if n == 0 else ""}/>' for di, n in enumerate(wk))
         o += f'<g class="col" style="animation-delay:{.4 + wi * .022:.2f}s">{cells}</g>'
     if ph:
-        o += '<text class="m" x="300" y="366" font-size="12" fill="#7F93BA">// waiting for the first sync (GitHub Action)</text>'
+        o += '<text class="m" x="300" y="366" font-size="12" fill="#B08A93">// waiting for the first sync (GitHub Action)</text>'
     for i, c in enumerate(cols):
         o += f'<rect x="{722 + i * 16}" y="356" width="12" height="12" rx="3" fill="{c}"/>'
-    o += '<text class="m" x="714" y="366" text-anchor="end" font-size="11" fill="#7F93BA">less</text><text class="m" x="810" y="366" font-size="11" fill="#7F93BA">more</text>'
+    o += '<text class="m" x="714" y="366" text-anchor="end" font-size="11" fill="#B08A93">less</text><text class="m" x="810" y="366" font-size="11" fill="#B08A93">more</text>'
     stamp = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d')
-    o += f'<text class="m" x="860" y="46" text-anchor="end" font-size="11.5" fill="#7F93BA">{"awaiting first sync" if ph else "updated " + stamp + " UTC"}</text>'
+    o += f'<text class="m" x="860" y="46" text-anchor="end" font-size="11.5" fill="#B08A93">{"awaiting first sync" if ph else "updated " + stamp + " UTC"}</text>'
     css = (f"text{{font-family:{FONT}}}.m{{font-family:{MONO}}}"
            "@keyframes in{from{opacity:0;transform:translateY(12px)}}@keyframes gr{from{transform:scaleX(0)}}@keyframes cl{from{opacity:0}}"
            ".in{animation:in .9s cubic-bezier(.2,.8,.2,1) both}.grow{transform-box:fill-box;transform-origin:left center;animation:gr 1.6s cubic-bezier(.3,.7,.2,1) .5s both}"
            ".col{animation:cl .6s ease both}@media (prefers-reduced-motion:reduce){*{animation:none!important}}")
     label = 'GitHub stats: repositories, stars, followers, contributions, top languages and contribution heatmap'
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="{label}"><title>{label}</title>
-<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#060A13"/><stop offset=".6" stop-color="#0A1330"/><stop offset="1" stop-color="#0F1D45"/></linearGradient>
-<linearGradient id="hl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#93C5FD" stop-opacity=".55"/><stop offset=".45" stop-color="#60A5FA" stop-opacity=".06"/><stop offset="1" stop-color="#22D3EE" stop-opacity=".35"/></linearGradient>
-<radialGradient id="aB"><stop offset="0" stop-color="#2563EB" stop-opacity=".5"/><stop offset="1" stop-color="#2563EB" stop-opacity="0"/></radialGradient>
-<radialGradient id="aC"><stop offset="0" stop-color="#22D3EE" stop-opacity=".3"/><stop offset="1" stop-color="#22D3EE" stop-opacity="0"/></radialGradient>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07050A"/><stop offset=".6" stop-color="#16070E"/><stop offset="1" stop-color="#2E0A16"/></linearGradient>
+<linearGradient id="hl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FDA4AF" stop-opacity=".55"/><stop offset=".45" stop-color="#FB7185" stop-opacity=".06"/><stop offset="1" stop-color="#F97316" stop-opacity=".35"/></linearGradient>
+<radialGradient id="aB"><stop offset="0" stop-color="#DC2626" stop-opacity=".5"/><stop offset="1" stop-color="#DC2626" stop-opacity="0"/></radialGradient>
+<radialGradient id="aC"><stop offset="0" stop-color="#F97316" stop-opacity=".3"/><stop offset="1" stop-color="#F97316" stop-opacity="0"/></radialGradient>
 <filter id="b8" x="-20%" y="-40%" width="140%" height="180%"><feGaussianBlur stdDeviation="9"/></filter>
 <clipPath id="sl"><rect width="{W}" height="{H}" rx="30"/></clipPath></defs>
 <style>{css}</style>

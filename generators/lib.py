@@ -25,14 +25,14 @@ text{{font-family:{FONT}}} .m{{font-family:{MONO}}}
 
 # shared gradients / filters. ids are prefixed so several can coexist.
 DEFS = """
-<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#060A13"/><stop offset=".6" stop-color="#0A1330"/><stop offset="1" stop-color="#0F1D45"/></linearGradient>
-<linearGradient id="hl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#93C5FD" stop-opacity=".55"/><stop offset=".45" stop-color="#60A5FA" stop-opacity=".06"/><stop offset="1" stop-color="#22D3EE" stop-opacity=".35"/></linearGradient>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07050A"/><stop offset=".6" stop-color="#16070E"/><stop offset="1" stop-color="#2E0A16"/></linearGradient>
+<linearGradient id="hl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FDA4AF" stop-opacity=".55"/><stop offset=".45" stop-color="#FB7185" stop-opacity=".06"/><stop offset="1" stop-color="#F97316" stop-opacity=".35"/></linearGradient>
 <linearGradient id="gl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".13"/><stop offset="1" stop-color="#fff" stop-opacity=".03"/></linearGradient>
-<linearGradient id="txt" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#EAF2FF"/><stop offset=".55" stop-color="#93C5FD"/><stop offset="1" stop-color="#67E8F9"/></linearGradient>
-<linearGradient id="acc" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2563EB"/><stop offset="1" stop-color="#22D3EE"/></linearGradient>
-<radialGradient id="aB"><stop offset="0" stop-color="#2563EB" stop-opacity=".55"/><stop offset="1" stop-color="#2563EB" stop-opacity="0"/></radialGradient>
-<radialGradient id="aC"><stop offset="0" stop-color="#22D3EE" stop-opacity=".38"/><stop offset="1" stop-color="#22D3EE" stop-opacity="0"/></radialGradient>
-<radialGradient id="aV"><stop offset="0" stop-color="#A78BFA" stop-opacity=".4"/><stop offset="1" stop-color="#A78BFA" stop-opacity="0"/></radialGradient>
+<linearGradient id="txt" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFF1F2"/><stop offset=".55" stop-color="#FDA4AF"/><stop offset="1" stop-color="#FDBA74"/></linearGradient>
+<linearGradient id="acc" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#DC2626"/><stop offset="1" stop-color="#F97316"/></linearGradient>
+<radialGradient id="aB"><stop offset="0" stop-color="#DC2626" stop-opacity=".55"/><stop offset="1" stop-color="#DC2626" stop-opacity="0"/></radialGradient>
+<radialGradient id="aC"><stop offset="0" stop-color="#F97316" stop-opacity=".38"/><stop offset="1" stop-color="#F97316" stop-opacity="0"/></radialGradient>
+<radialGradient id="aV"><stop offset="0" stop-color="#F472B6" stop-opacity=".4"/><stop offset="1" stop-color="#F472B6" stop-opacity="0"/></radialGradient>
 <filter id="fn" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .55 -.18"/></filter>
 <pattern id="gr" width="160" height="160" patternUnits="userSpaceOnUse"><rect width="160" height="160" filter="url(#fn)" opacity=".5"/></pattern>
 <filter id="blur6" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6"/></filter>
@@ -76,5 +76,5 @@ def stars(n, seed, w, h, rmin, rmax, x0=-60, x1=60):
 
 
 def glass(x, y, w, h, r=14, op=1):
-    return (f'<g opacity="{op}"><rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{r}" fill="url(#gl)" stroke="#93C5FD" stroke-opacity=".25"/>'
+    return (f'<g opacity="{op}"><rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{r}" fill="url(#gl)" stroke="#FDA4AF" stroke-opacity=".25"/>'
             f'<path d="M{x + r},{y + .8}H{x + w - r}" stroke="#fff" stroke-opacity=".5" stroke-linecap="round"/></g>')
