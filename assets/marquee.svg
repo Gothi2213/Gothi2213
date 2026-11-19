@@ -26,4 +26,16 @@ text{font-family:'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif} .m{font
 .pu{transform-box:fill-box;transform-origin:center;animation:pulse 2.8s cubic-bezier(.2,.6,.3,1) infinite}
 .tw{animation:tw 5s ease-in-out infinite}
 @media (prefers-reduced-motion:reduce){*{animation:none!important} .mo{display:none}}
+
+@keyframes rise{0%{transform:translate(0,0) scale(1);opacity:0}12%{opacity:.95}100%{transform:translate(var(--dx,20px),var(--dy,-260px)) scale(.3);opacity:0}}
+@keyframes shoot{0%,84%{transform:translate(0,0);opacity:0}86%{opacity:1}100%{transform:translate(-360px,180px);opacity:0}}
+@keyframes flt{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes flow{to{stroke-dashoffset:-120}}
+@keyframes breathe{0%,100%{transform:scale(1);opacity:.85}50%{transform:scale(1.08);opacity:1}}
+@keyframes dr{to{transform:translate(60px,24px)}}
+@keyframes dd{from{stroke-dasharray:0 700}to{stroke-dasharray:700 0}}
+@keyframes ph{0%{opacity:0;transform:translateY(10px)}6%,30%{opacity:1;transform:none}36%,100%{opacity:0;transform:translateY(-10px)}}
+.em{animation:rise linear infinite}.fl{animation:flt 6s cubic-bezier(.45,0,.55,1) infinite}.fw{animation:flow 9s linear infinite}
+.br{transform-box:fill-box;transform-origin:center;animation:breathe 7s cubic-bezier(.45,0,.55,1) infinite}.dr{animation:dr 24s ease-in-out infinite alternate}
+@media (prefers-reduced-motion:reduce){.em,.sh,.p2,.p3{display:none}}
 @keyframes mq{to{transform:translateX(-1900px)}}.r1,.r2{animation:mq linear infinite}</style><g mask="url(#mk)"><g class="r1" style="animation-duration:95s;animation-direction:normal"><text x="0" y="60" font-size="54" font-weight="900" textLength="1900" lengthAdjust="spacing" fill="#EF4444" fill-opacity=".92">JAVA &#183; JAVASCRIPT &#183; HTML &#183; CSS &#183; SQL &#183; MYSQL &#183; GIT &#183; GITHUB &#183; C++ &#183; </text><text x="1900" y="60" font-size="54" font-weight="900" textLength="1900" lengthAdjust="spacing" fill="#EF4444" fill-opacity=".92">JAVA &#183; JAVASCRIPT &#183; HTML &#183; CSS &#183; SQL &#183; MYSQL &#183; GIT &#183; GITHUB &#183; C++ &#183; </text></g><g class="r2" style="animation-duration:120s;animation-direction:reverse"><text x="0" y="128" font-size="54" font-weight="900" textLength="1900" lengthAdjust="spacing" fill="none" stroke="#EF4444" stroke-width="1.6" stroke-opacity=".8">JAVA &#183; JAVASCRIPT &#183; HTML &#183; CSS &#183; SQL &#183; MYSQL &#183; GIT &#183; GITHUB &#183; C++ &#183; </text><text x="1900" y="128" font-size="54" font-weight="900" textLength="1900" lengthAdjust="spacing" fill="none" stroke="#EF4444" stroke-width="1.6" stroke-opacity=".8">JAVA &#183; JAVASCRIPT &#183; HTML &#183; CSS &#183; SQL &#183; MYSQL &#183; GIT &#183; GITHUB &#183; C++ &#183; </text></g></g></svg>

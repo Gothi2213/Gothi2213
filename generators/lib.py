@@ -78,3 +78,28 @@ def stars(n, seed, w, h, rmin, rmax, x0=-60, x1=60):
 def glass(x, y, w, h, r=14, op=1):
     return (f'<g opacity="{op}"><rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{r}" fill="url(#gl)" stroke="#FDA4AF" stroke-opacity=".25"/>'
             f'<path d="M{x + r},{y + .8}H{x + w - r}" stroke="#fff" stroke-opacity=".5" stroke-linecap="round"/></g>')
+
+
+BASE_CSS += """
+@keyframes rise{0%{transform:translate(0,0) scale(1);opacity:0}12%{opacity:.95}100%{transform:translate(var(--dx,20px),var(--dy,-260px)) scale(.3);opacity:0}}
+@keyframes shoot{0%,84%{transform:translate(0,0);opacity:0}86%{opacity:1}100%{transform:translate(-360px,180px);opacity:0}}
+@keyframes flt{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes flow{to{stroke-dashoffset:-120}}
+@keyframes breathe{0%,100%{transform:scale(1);opacity:.85}50%{transform:scale(1.08);opacity:1}}
+@keyframes dr{to{transform:translate(60px,24px)}}
+@keyframes dd{from{stroke-dasharray:0 700}to{stroke-dasharray:700 0}}
+@keyframes ph{0%{opacity:0;transform:translateY(10px)}6%,30%{opacity:1;transform:none}36%,100%{opacity:0;transform:translateY(-10px)}}
+.em{animation:rise linear infinite}.fl{animation:flt 6s cubic-bezier(.45,0,.55,1) infinite}.fw{animation:flow 9s linear infinite}
+.br{transform-box:fill-box;transform-origin:center;animation:breathe 7s cubic-bezier(.45,0,.55,1) infinite}.dr{animation:dr 24s ease-in-out infinite alternate}
+@media (prefers-reduced-motion:reduce){.em,.sh,.p2,.p3{display:none}}
+"""
+
+
+def embers(n, seed, w, h, cols=('#FB923C', '#FDBA74', '#F87171', '#FDA4AF')):
+    r = random.Random(seed)
+    out = ''
+    for _ in range(n):
+        dur = r.uniform(7, 15)
+        out += (f'<circle class="em" cx="{r.uniform(0, w):.0f}" cy="{h + 8}" r="{r.uniform(.8, 2.3):.1f}" fill="{r.choice(cols)}" '
+                f'style="--dx:{r.uniform(-60, 60):.0f}px;--dy:-{r.uniform(.45, .95) * h:.0f}px;animation-duration:{dur:.1f}s;animation-delay:-{r.uniform(0, dur):.1f}s"/>')
+    return out

@@ -29,7 +29,10 @@ def hero():
         big = i in (0, 2, 4)
         con += (f'<g style="animation:fade .8s ease {1.2 + i * .2:.1f}s both"><circle cx="{x}" cy="{y}" r="{16 if big else 10}" fill="url(#aC)"/>'
                 f'<circle cx="{x}" cy="{y}" r="{3.6 if big else 2.4}" fill="#FFF1F2" class="tw" style="animation-delay:-{i * 1.1:.1f}s;animation-duration:{4 + i * .7:.1f}s"/></g>')
+    rays = ''.join(f'<path d="M{104 * math.cos(a):.1f},{104 * math.sin(a):.1f}L{(104 + L) * math.cos(a):.1f},{(104 + L) * math.sin(a):.1f}" stroke="#FDA4AF" stroke-opacity="{op}" stroke-width="{w_}" stroke-linecap="round"/>'
+                   for a, L, op, w_ in [(k * math.pi / 18, 10 + (k * 37 % 5) * 9, .14 + (k % 3) * .09, 1 + (k % 2) * .6) for k in range(36)])
     css = '''
+.p1,.p2,.p3{animation:ph 15s cubic-bezier(.2,.8,.2,1) infinite}.p2{animation-delay:5s}.p3{animation-delay:10s}
 .d1{animation:d1 70s ease-in-out infinite alternate}.d2{animation:d2 46s ease-in-out infinite alternate}
 @keyframes d1{to{transform:translateX(-34px)}}@keyframes d2{to{transform:translateX(-70px)}}
 .a1{animation:a1 26s ease-in-out infinite alternate}.a2{animation:a2 34s ease-in-out infinite alternate}.a3{animation:a3 41s ease-in-out infinite alternate}
@@ -51,11 +54,14 @@ def hero():
 <g mask="url(#bmM)"><g class="bm"><polygon points="440,-10 500,-10 700,{H} 380,{H}" fill="url(#bmH)"/></g><g class="bm" style="animation-duration:23s;animation-direction:alternate-reverse"><polygon points="520,-10 560,-10 860,{H} 640,{H}" fill="url(#bmH)" opacity=".7"/></g></g>
 <g fill="#FECDD3" opacity=".45" class="d1">{stars(46, 3, W, H, .5, 1.1)}</g>
 <g fill="#FFE4E6" opacity=".65" class="d2">{stars(22, 8, W, H, .9, 1.6)}</g>
-<g class="a1" style="animation-duration:19s"><circle cx="730" cy="228" r="215" fill="url(#aE)"/></g>
+<g class="a1" style="animation-duration:19s"><circle class="br" cx="730" cy="228" r="215" fill="url(#aE)"/></g>
+<g transform="translate(730,228)"><g class="rot" style="animation-duration:160s">{rays}</g></g>
 <circle cx="730" cy="228" r="98" fill="#07050A"/><circle cx="730" cy="228" r="98" fill="none" stroke="url(#rim)" stroke-width="2.5"/><circle cx="730" cy="228" r="98" fill="none" stroke="#FB923C" stroke-opacity=".5" stroke-width="10" filter="url(#blur6)"/>
 <ellipse cx="730" cy="228" rx="205" ry="82" transform="rotate(-18 730 228)" fill="none" stroke="#FB7185" stroke-opacity=".35" stroke-dasharray="2 9" stroke-linecap="round"/>
 <ellipse cx="730" cy="228" rx="150" ry="52" transform="rotate(-18 730 228)" fill="none" stroke="#FDA4AF" stroke-opacity=".18"/>
 <g class="mo"><circle r="4" fill="#fff"><animateMotion dur="38s" repeatCount="indefinite" path="M525,228a205,82 0 1,0 410,0a205,82 0 1,0 -410,0" rotate="auto"/></circle></g>
+{embers(26, 4, W, H)}
+<g class="sh"><g style="animation:shoot 14s cubic-bezier(.3,.6,.4,1) 3s infinite"><path d="M840,50l70,-35" stroke="#FFE4E6" stroke-width="1.8" stroke-linecap="round" opacity=".9"/></g><g style="animation:shoot 21s cubic-bezier(.3,.6,.4,1) 11s infinite"><path d="M600,18l60,-30" stroke="#FDBA74" stroke-width="1.5" stroke-linecap="round" opacity=".9"/></g></g>
 {con}
 {c}
 <g class="in" style="animation-delay:.1s"><rect x="60" y="54" width="248" height="34" rx="17" fill="url(#gl)" stroke="#FDA4AF" stroke-opacity=".3"/>
@@ -67,7 +73,7 @@ def hero():
 <g mask="url(#nmask)" class="mo"><rect y="200" width="120" height="130" fill="url(#sw)" transform="skewX(-16)"><animateTransform attributeName="transform" type="translate" values="-260 0;760 0;760 0" keyTimes="0;.32;1" dur="9s" begin="2.2s" repeatCount="indefinite" calcMode="spline" keySplines=".4 0 .2 1;0 0 1 1"/></rect></g></g>
 <g class="in" style="animation-delay:.8s"><rect x="60" y="346" width="64" height="3" rx="1.5" fill="url(#acc)"/>
 <text class="m" x="60" y="382" font-size="15" fill="#FDA4AF" textLength="470" lengthAdjust="spacing">SOFTWARE DEVELOPER IN TRAINING</text>
-<text x="60" y="414" font-size="19" fill="{MU}">Learning by building &#183; Argentina</text></g>'''
+<text class="p1" x="60" y="414" font-size="19" fill="{MU}">Learning by building &#183; Argentina</text><text class="p2" x="60" y="414" font-size="19" fill="{MU}" style="opacity:0">Java &#183; JavaScript &#183; SQL &#183; Web</text><text class="p3" x="60" y="414" font-size="19" fill="{MU}" style="opacity:0">Looking for my first professional experience</text></g>'''
     return svg(W, H, 'Thiago Sarco, software developer in training from Argentina, open to opportunities', b, defs, css)
 
 
@@ -76,7 +82,7 @@ def status():
     W, H = 900, 128
     cols = [('STATUS', 'Open to work', '#4ADE80'), ('LOOKING FOR', 'First experience', '#F97316'), ('BASED IN', 'Argentina &#183; UTC&#8722;3', '#FB7185'), ('FOCUS', 'Java &#183; Web &#183; SQL', '#F472B6')]
     d, o, c = slab(W, H, 22, uid='st', extra='<ellipse cx="450" cy="150" rx="520" ry="90" fill="url(#aB)" opacity=".7"/>')
-    b = o + c
+    b = o + '<g class="mo"><polygon points="0,0 90,0 50,128 -40,128" fill="#fff" fill-opacity=".06"><animateTransform attributeName="transform" type="translate" values="-160 0;1000 0;1000 0" keyTimes="0;.35;1" dur="8s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .25 1;0 0 1 1"/></polygon></g>' + c
     for i, (lab, val, col) in enumerate(cols):
         x = 34 + i * 218
         if i:
@@ -96,8 +102,9 @@ def about():
              ('&gt; SQL &#183; data modeling', '#D1A5AE'), ('$ git status', '#FDBA74'), ('&gt; open to opportunities', '#4ADE80')]
     term = ''
     for i, (t, col) in enumerate(lines):
-        term += (f'<text class="m" x="22" y="{70 + i * 25}" font-size="14.5" fill="{col}" style="animation:fade .01s steps(1) {.6 + i * .55:.2f}s both">{t}</text>')
-    css = '@keyframes cur{0%,49%{opacity:1}50%,100%{opacity:0}}.cur{animation:cur 1.1s steps(1) infinite}.ul{stroke-dasharray:1;animation:draw 1.4s cubic-bezier(.5,0,.2,1) 1.1s both}'
+        term += (f'<text class="m" x="22" y="{70 + i * 25}" font-size="14.5" fill="{col}" style="animation:L{i} 24s linear infinite">{t}</text>')
+    css = ''.join(f'@keyframes L{i}{{0%,{(.6 + i * .55) / .24:.2f}%{{opacity:0}}{(.6 + i * .55) / .24 + .01:.2f}%,93%{{opacity:1}}97%,100%{{opacity:0}}}}' for i in range(8))
+    css += '@keyframes cur{0%,49%{opacity:1}50%,100%{opacity:0}}.cur{animation:cur 1.1s steps(1) infinite}.ul{stroke-dasharray:1;animation:draw 1.4s cubic-bezier(.5,0,.2,1) 1.1s both}'
     b = f'''{o}<g fill="#FECDD3" opacity=".5">{stars(30, 11, W, H, .5, 1.1, 0, 0)}</g>{c}
 <g class="in"><text class="m" x="56" y="74" font-size="13" fill="#F97316" textLength="150" lengthAdjust="spacing">01 &#8212; ABOUT ME</text>
 <text x="54" y="150" font-size="62" font-weight="300" fill="{TX}">I learn</text>
@@ -111,7 +118,7 @@ def about():
 <rect width="336" height="34" rx="16" fill="#fff" fill-opacity=".06"/><path d="M16,.8H320" stroke="#fff" stroke-opacity=".45"/>
 <circle cx="20" cy="17" r="5" fill="#F87171"/><circle cx="38" cy="17" r="5" fill="#FBBF24"/><circle cx="56" cy="17" r="5" fill="#4ADE80"/>
 <text class="m" x="168" y="21" font-size="11.5" fill="#A07C84" text-anchor="middle">thiago@argentina: ~</text>
-{term}<rect class="cur" x="22" y="{70 + 8 * 25 - 12}" width="9" height="16" fill="#FDBA74" style="animation-delay:5s"/></g></g>'''
+{term}<g style="animation:L7 24s linear infinite"><rect class="cur" x="22" y="{70 + 8 * 25 - 12}" width="9" height="16" fill="#FDBA74" style="animation-delay:5s"/></g></g></g>'''
     return svg(W, H, 'About me: Thiago Sarco learns by building. Software Development student combining academic learning and continuous practice, interested in software development, web development, databases and problem solving', b, d, css)
 
 
@@ -147,7 +154,7 @@ def section(i, title):
             f'<linearGradient id="lg" x1="{1 if right else 0}" y1="0" x2="{0 if right else 1}" y2="0"><stop offset="0" stop-color="#EF4444" stop-opacity=".9"/><stop offset="1" stop-color="#EF4444" stop-opacity="0"/></linearGradient>')
     sx0, sx1 = (880, 20) if right else (20, 880)
     b = f'''<g class="in" style="animation-delay:{i * .05:.2f}s">
-<text x="{6 if right else W - 6}" y="78" font-size="104" font-weight="900" text-anchor="{"start" if right else "end"}" fill="none" stroke="#EF4444" stroke-opacity=".3" stroke-width="1.4">{n}</text>
+<text x="{6 if right else W - 6}" y="78" font-size="104" font-weight="900" text-anchor="{"start" if right else "end"}" fill="none" stroke="#EF4444" stroke-opacity=".3" stroke-width="1.4" style="animation:dd 2.6s cubic-bezier(.4,0,.2,1) both">{n}</text>
 <text class="m" x="{x}" y="30" font-size="12.5" text-anchor="{anc}" fill="#EF4444" letter-spacing="3.2">SECTION {n}</text>
 <text x="{x}" y="66" font-size="38" font-weight="800" text-anchor="{anc}" fill="url(#tg)" letter-spacing="-.5">{esc(title)}</text></g>
 <rect x="4" y="86" width="892" height="1.6" rx=".8" fill="url(#lg)"/>
@@ -177,7 +184,7 @@ def skills():
     b = o + f'<g fill="#FFE4E6" opacity=".55" class="d1" style="animation:none">{stars(60, 5, W, H, .5, 1.2, 0, 0)}</g>'
     b += f'<g transform="translate({cx},{cy}) scale(1,{ratio})">'
     for R, items, per, dr, col, strong, off in rings:
-        b += f'<ellipse rx="{R}" ry="{R}" fill="none" stroke="{col}" stroke-opacity=".6" stroke-dasharray="3 9" stroke-linecap="round" vector-effect="non-scaling-stroke"/>'
+        b += f'<ellipse class="fw" style="animation-duration:{per // 5}s;animation-direction:{"normal" if dr == 1 else "reverse"}" rx="{R}" ry="{R}" fill="none" stroke="{col}" stroke-opacity=".6" stroke-dasharray="3 9" stroke-linecap="round" vector-effect="non-scaling-stroke"/>'
         n = len(items)
         for i, t in enumerate(items):
             a = off + 360 * i / n
@@ -186,14 +193,14 @@ def skills():
                   f'<g class="rot" style="animation-duration:{per}s;animation-direction:{rev}"><g transform="rotate({-a:.1f})"><g transform="scale(1,{1 / ratio:.4f})">{chip(t, col, strong)}</g></g></g></g></g></g>')
     b += '</g>'
     # core
-    b += f'''<g transform="translate({cx},{cy})"><circle r="46" fill="url(#aC)"/><circle r="34" fill="#16070E" stroke="url(#acc)" stroke-width="1.6"/><circle r="34" fill="none" stroke="#FDBA74" class="pu" style="animation-duration:4s"/>
+    b += f'''<g transform="translate({cx},{cy})"><circle r="46" fill="url(#aC)"/><circle r="34" fill="#16070E" stroke="url(#acc)" stroke-width="1.6"/><circle r="34" fill="none" stroke="#FDBA74" class="pu" style="animation-duration:4s"/><circle r="34" fill="none" stroke="#F97316" class="pu" style="animation-duration:4s;animation-delay:-2s"/>
 <text y="7" font-size="20" font-weight="800" text-anchor="middle" fill="#FFF1F2" class="m">&lt;/&gt;</text></g>'''
     leg = [('#F97316', 'CORE', 'what I focus on'), ('#FB7185', 'TOOLS', 'what I build with'), ('#F472B6', 'CONCEPTS', 'what I am learning')]
     b += f'<text class="m" x="40" y="58" font-size="13" fill="#F97316" letter-spacing="3">02 &#8212; SKILL MAP</text>'
     for i, (col, a, t) in enumerate(leg):
         y = 428 + i * 22
         b += f'<circle cx="46" cy="{y - 5}" r="4.5" fill="{col}"/><text class="m" x="60" y="{y}" font-size="12.5" fill="{TX}" letter-spacing="2">{a}</text><text x="150" y="{y}" font-size="14" fill="{MU}">{t}</text>'
-    b += c
+    b += embers(18, 9, W, H) + c
     return svg(W, H, 'Skill map: core Java, JavaScript, SQL; tools HTML, CSS, MySQL, Git, GitHub, C++; concepts OOP, data structures, database design, responsive design, problem solving, Git workflows', b, d)
 
 
@@ -250,7 +257,7 @@ def mindset():
         y = H - h - 8
         d, o, c = slab(w, h, 20, uid=f'm{i}', extra=f'<ellipse cx="{w / 2}" cy="0" rx="{w * .8}" ry="{h * .5}" fill="{col}" opacity=".16"/>')
         defs += d
-        b += (f'<g transform="translate({x},{y})" class="in" style="animation-delay:{i * .14:.2f}s"><g>{o}{c}'
+        b += (f'<g transform="translate({x},{y})" class="in" style="animation-delay:{i * .14:.2f}s"><g class="fl" style="animation-delay:-{i * 1.3:.1f}s;animation-duration:{5.5 + i * .8:.1f}s">{o}<polygon points="0,0 36,0 16,{h} -20,{h}" fill="#fff" fill-opacity=".07" class="mo"><animateTransform attributeName="transform" type="translate" values="-60 0;{w + 80} 0;{w + 80} 0" keyTimes="0;.3;1" dur="{9 + i * 1.5}s" begin="-{i * 2}s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .25 1;0 0 1 1"/></polygon>{c}'
               f'<text x="{w - 12}" y="{h - 14}" font-size="86" font-weight="900" text-anchor="end" fill="none" stroke="{col}" stroke-opacity=".28" stroke-width="1.4">{n}</text>'
               f'<rect x="20" y="26" width="26" height="3" rx="1.5" fill="{col}"/>'
               f'<text x="20" y="66" font-size="29" font-weight="800" fill="{TX}">{t}</text>'
@@ -271,7 +278,9 @@ def journey():
     b = o + f'<g fill="#FECDD3" opacity=".5">{stars(40, 21, W, H, .5, 1.1, 0, 0)}</g>' + c
     b += f'<path d="{path}" fill="none" stroke="#FDA4AF" stroke-opacity=".35" stroke-width="2" stroke-dasharray="3 9" stroke-linecap="round"/>'
     b += f'<path d="{seg1}" pathLength="1" fill="none" stroke="url(#acc)" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="1" style="animation:draw 2.2s cubic-bezier(.5,0,.2,1) .4s both"/>'
-    b += f'<g class="mo"><circle r="9" fill="#FDBA74" opacity=".35"/><circle r="3.6" fill="#fff"/><animateMotion dur="7s" repeatCount="indefinite" path="{seg1}" keyPoints="0;1;1" keyTimes="0;.55;1" calcMode="spline" keySplines=".45 0 .25 1;0 0 1 1"/></g>'
+    for k, (rr, op, bg) in enumerate([(2, .35, .42), (2.6, .5, .28), (3.2, .7, .14), (3.8, 1, 0)]):
+        b += (f'<g class="mo"><circle r="{rr * 2.4}" fill="#F97316" opacity="{op * .35}"/><circle r="{rr}" fill="#FFF1F2" opacity="{op}"/>'
+              f'<animateMotion dur="10s" begin="-{bg}s" repeatCount="indefinite" path="{path}" keyPoints="0;1;1" keyTimes="0;.72;1" calcMode="spline" keySplines=".45 0 .25 1;0 0 1 1"/></g>')
     for i, (x, y, n, t, l1, l2, st, col, pos) in enumerate(nodes):
         up = pos == 'up'
         done = st == 'ONGOING'
@@ -296,9 +305,9 @@ def journey():
 # ============================================================ OBJECTIVE
 def objective():
     W, H = 900, 330
-    d, o, c = slab(W, H, 30, uid='ob', extra='<ellipse cx="780" cy="90" rx="380" ry="200" fill="url(#aC)" opacity=".8"/><ellipse cx="80" cy="330" rx="360" ry="170" fill="url(#aB)"/>')
+    d, o, c = slab(W, H, 30, uid='ob', extra='<ellipse class="dr" cx="780" cy="90" rx="380" ry="200" fill="url(#aC)" opacity=".8"/><ellipse cx="80" cy="330" rx="360" ry="170" fill="url(#aB)"/>')
     items = [('Learn', 'From experienced', 'developers', '#FB7185'), ('Collaborate', 'As part of', 'a team', '#F97316'), ('Contribute', 'Applying my', 'technical knowledge', '#F472B6'), ('Grow', 'Continue', 'improving', '#4ADE80')]
-    b = o + c
+    b = o + embers(14, 12, W, H) + c
     b += f'''<g class="in"><text class="m" x="56" y="62" font-size="13" fill="#F97316" letter-spacing="3">06 &#8212; PROFESSIONAL OBJECTIVE</text>
 <text x="54" y="122" font-size="44" font-weight="300" fill="{TX}" textLength="560" lengthAdjust="spacing">Looking for my first</text>
 <text x="54" y="176" font-size="52" font-weight="900" fill="url(#txt)" textLength="700" lengthAdjust="spacing">professional experience</text>
@@ -354,7 +363,7 @@ def footer():
     css = '.w1{animation:wv 11s ease-in-out infinite alternate}.w2{animation:wv 15s ease-in-out infinite alternate-reverse}@keyframes wv{to{transform:translateX(-90px)}}'
     wave = lambda y, a, ph: 'M-120,%d ' % y + ' '.join(f'Q{-120 + k * 120 + 60},{y + (a if k % 2 == 0 else -a)} {-120 + (k + 1) * 120},{y}' for k in range(10))
     b = o + f'<g fill="#FECDD3" opacity=".5">{stars(36, 33, W, H, .5, 1.1, 0, 0)}</g>'
-    b += f'<path class="w1" d="{wave(132, 14, 0)}" fill="none" stroke="#FB7185" stroke-opacity=".5"/><path class="w2" d="{wave(142, 12, 0)}" fill="none" stroke="#F97316" stroke-opacity=".4"/>' + c
+    b += embers(16, 14, W, H) + f'<path class="w1" d="{wave(132, 14, 0)}" fill="none" stroke="#FB7185" stroke-opacity=".5"/><path class="w2" d="{wave(142, 12, 0)}" fill="none" stroke="#F97316" stroke-opacity=".4"/>' + c
     b += f'<text x="450" y="76" font-size="40" font-weight="300" text-anchor="middle" fill="{TX}" textLength="430" lengthAdjust="spacing">THIAGO <tspan font-weight="900">SARCO</tspan></text>'
     b += f'<text class="m" x="450" y="106" font-size="13" text-anchor="middle" fill="#FDA4AF" letter-spacing="4">LEARNING BY BUILDING &#183; ARGENTINA</text>'
     return svg(W, H, 'Thiago Sarco. Learning by building. Argentina', b, d, css)

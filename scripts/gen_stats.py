@@ -67,7 +67,7 @@ def render(d):
         if i:
             o += f'<path d="M{x - 22},72V150" stroke="#FDA4AF" stroke-opacity=".18"/>'
         o += (f'<g class="in" style="animation-delay:{.1 + i * .12:.2f}s"><text class="m" x="{x}" y="86" font-size="12" letter-spacing="2.4" fill="{col}">{lab}</text>'
-              f'<text x="{x}" y="140" font-size="58" font-weight="800" fill="{col}" filter="url(#b8)" opacity=".45">{fmt(d[key]) if d else "--"}</text>'
+              f'<text x="{x}" y="140" font-size="58" font-weight="800" fill="{col}" filter="url(#b8)" opacity=".45" class="gl" style="animation-delay:-{i * 1.3:.1f}s">{fmt(d[key]) if d else "--"}</text>'
               f'<text x="{x}" y="140" font-size="58" font-weight="800" fill="#F1F6FF">{fmt(d[key]) if d else "--"}</text></g>')
     for i, (lab, key) in enumerate(small):
         x = 40 + i * 215
@@ -107,6 +107,7 @@ def render(d):
     for wi, wk in enumerate(weeks):
         cells = ''.join(f'<rect x="{40 + wi * 15.5:.1f}" y="{380 + di * 15}" width="12" height="12" rx="3" fill="{cols[lvl(n)]}"{" stroke=\"#2B1119\"" if n == 0 else ""}/>' for di, n in enumerate(wk))
         o += f'<g class="col" style="animation-delay:{.4 + wi * .022:.2f}s">{cells}</g>'
+    o += '<clipPath id="hm"><rect x="40" y="378" width="820" height="110"/></clipPath><g clip-path="url(#hm)"><polygon class="sheen" points="0,378 60,378 20,488 -40,488" fill="#fff" fill-opacity=".16"/></g>'
     if ph:
         o += '<text class="m" x="300" y="366" font-size="12" fill="#B08A93">// waiting for the first sync (GitHub Action)</text>'
     for i, c in enumerate(cols):
@@ -115,9 +116,9 @@ def render(d):
     stamp = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d')
     o += f'<text class="m" x="860" y="46" text-anchor="end" font-size="11.5" fill="#B08A93">{"awaiting first sync" if ph else "updated " + stamp + " UTC"}</text>'
     css = (f"text{{font-family:{FONT}}}.m{{font-family:{MONO}}}"
-           "@keyframes in{from{opacity:0;transform:translateY(12px)}}@keyframes gr{from{transform:scaleX(0)}}@keyframes cl{from{opacity:0}}"
+           "@keyframes gb{to{opacity:.85}}.gl{animation:gb 4.5s ease-in-out infinite alternate}@keyframes sw{0%{transform:translateX(-120px)}45%,100%{transform:translateX(1000px)}}.sheen{animation:sw 9s cubic-bezier(.45,0,.25,1) 2.5s infinite}@keyframes in{from{opacity:0;transform:translateY(12px)}}@keyframes gr{from{transform:scaleX(0)}}@keyframes cl{from{opacity:0}}"
            ".in{animation:in .9s cubic-bezier(.2,.8,.2,1) both}.grow{transform-box:fill-box;transform-origin:left center;animation:gr 1.6s cubic-bezier(.3,.7,.2,1) .5s both}"
-           ".col{animation:cl .6s ease both}@media (prefers-reduced-motion:reduce){*{animation:none!important}}")
+           ".col{animation:cl .6s ease both}@media (prefers-reduced-motion:reduce){*{animation:none!important}.sheen{display:none}}")
     label = 'GitHub stats: repositories, stars, followers, contributions, top languages and contribution heatmap'
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="{label}"><title>{label}</title>
 <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07050A"/><stop offset=".6" stop-color="#16070E"/><stop offset="1" stop-color="#2E0A16"/></linearGradient>

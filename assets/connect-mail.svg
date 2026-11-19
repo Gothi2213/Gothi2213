@@ -26,4 +26,16 @@ text{font-family:'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif} .m{font
 .pu{transform-box:fill-box;transform-origin:center;animation:pulse 2.8s cubic-bezier(.2,.6,.3,1) infinite}
 .tw{animation:tw 5s ease-in-out infinite}
 @media (prefers-reduced-motion:reduce){*{animation:none!important} .mo{display:none}}
+
+@keyframes rise{0%{transform:translate(0,0) scale(1);opacity:0}12%{opacity:.95}100%{transform:translate(var(--dx,20px),var(--dy,-260px)) scale(.3);opacity:0}}
+@keyframes shoot{0%,84%{transform:translate(0,0);opacity:0}86%{opacity:1}100%{transform:translate(-360px,180px);opacity:0}}
+@keyframes flt{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes flow{to{stroke-dashoffset:-120}}
+@keyframes breathe{0%,100%{transform:scale(1);opacity:.85}50%{transform:scale(1.08);opacity:1}}
+@keyframes dr{to{transform:translate(60px,24px)}}
+@keyframes dd{from{stroke-dasharray:0 700}to{stroke-dasharray:700 0}}
+@keyframes ph{0%{opacity:0;transform:translateY(10px)}6%,30%{opacity:1;transform:none}36%,100%{opacity:0;transform:translateY(-10px)}}
+.em{animation:rise linear infinite}.fl{animation:flt 6s cubic-bezier(.45,0,.55,1) infinite}.fw{animation:flow 9s linear infinite}
+.br{transform-box:fill-box;transform-origin:center;animation:breathe 7s cubic-bezier(.45,0,.55,1) infinite}.dr{animation:dr 24s ease-in-out infinite alternate}
+@media (prefers-reduced-motion:reduce){.em,.sh,.p2,.p3{display:none}}
 </style><g clip-path="url(#cm)"><rect width="900" height="112" fill="url(#cmg)"/><g class="mo"><rect y="0" width="140" height="112" fill="url(#sh3)" transform="skewX(-18)"><animateTransform attributeName="transform" type="translate" values="-260 0;1100 0;1100 0" keyTimes="0;.4;1" dur="7s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .25 1;0 0 1 1"/></rect></g><rect width="900" height="112" fill="url(#gr)" opacity=".35" style="mix-blend-mode:soft-light"/></g><path d="M26,0H874Q900,0 900,26V86Q900,112 874,112H26Q0,112 0,86V26Q0,0 26,0Z" fill="none" stroke="url(#hl)" stroke-width="1.5"/><text class="m" x="44" y="42" font-size="13" fill="#FFE4D6" letter-spacing="3">SAY HELLO &#8212; EMAIL</text><text x="42" y="82" font-size="34" font-weight="800" fill="#fff">thiagosarco13@gmail.com</text><g transform="translate(820,56)"><circle r="26" fill="#fff" fill-opacity=".16"/><path d="M-9,0H9M2,-8L10,0L2,8" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg>
