@@ -13,23 +13,13 @@
 
 <img src="./assets/sec-about.svg" width="100%" alt="About Me"/>
 
-<table align="center">
-  <tr>
-    <td width="66%" valign="top">
-      <h3>Software Developer in Training</h3>
-      <p>I'm a <b>Software Development student</b> currently building my knowledge through academic learning and continuous practice.</p>
-      <p>I'm interested in <b>software development, web development, databases and problem solving</b>, with a focus on understanding how complete software solutions are designed and developed.</p>
-      <p>I enjoy <b>learning by building</b>, experimenting with technologies and turning ideas into functional solutions.</p>
-    </td>
-    <td width="34%" align="center" valign="middle">
-      <img src="https://skillicons.dev/icons?i=java,js,html,css&perline=2&theme=dark" alt="Java, JavaScript, HTML, CSS"/>
-    </td>
-  </tr>
-</table>
+<img src="./assets/terminal.svg" width="100%" alt="Terminal: Software Developer in Training - Software Development student building knowledge through academic learning and continuous practice, interested in software development, web development, databases and problem solving"/>
 
 <br/><br/>
 
 <img src="./assets/sec-stack.svg" width="100%" alt="Technologies and Tools"/>
+
+<img src="./assets/ribbon.svg" width="100%" alt="Java, JavaScript, HTML, CSS, SQL, MySQL, Git, GitHub, C++"/>
 
 <table align="center">
   <tr>
