@@ -2,20 +2,17 @@
 
 <a href="https://github.com/Gothi2213"><img src="./assets/banner.svg" width="100%" alt="Thiago Sarco - Software Developer in Training"/></a>
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=3200&pause=1000&color=60A5FA&center=true&vCenter=true&width=700&height=40&lines=Learning+by+building;Java+%C2%B7+JavaScript+%C2%B7+SQL+%C2%B7+Web+Development;Looking+for+my+first+professional+experience;Open+to+learning%2C+building+and+growing" alt="Typing SVG"/>
+<img src="./assets/tagline.svg" width="100%" alt="Learning by building. Java, JavaScript, SQL, Web Development. Looking for my first professional experience."/>
 
-<a href="https://github.com/Gothi2213"><img src="https://img.shields.io/badge/GitHub-Gothi2213-0D1117?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>
-<img src="https://img.shields.io/badge/Argentina-0D1117?style=for-the-badge&logo=googlemaps&logoColor=60A5FA" alt="Argentina"/>
-<img src="https://img.shields.io/badge/Software%20Development-172554?style=for-the-badge&logo=codeforces&logoColor=white" alt="Software Development"/>
-<img src="https://img.shields.io/badge/Open%20to-Opportunities-2563EB?style=for-the-badge&logo=handshake&logoColor=white" alt="Open to opportunities"/>
+<a href="https://github.com/Gothi2213"><img src="./assets/badges.svg" width="100%" alt="GitHub Gothi2213, Argentina, Software Development, Open to opportunities"/></a>
 
-<br/><br/><br/>
+<img src="./assets/divider.svg" width="100%" alt=""/>
 
 <img src="./assets/sec-about.svg" width="100%" alt="About Me"/>
 
 <img src="./assets/terminal.svg" width="100%" alt="Terminal: Software Developer in Training - Software Development student building knowledge through academic learning and continuous practice, interested in software development, web development, databases and problem solving"/>
 
-<br/><br/>
+<img src="./assets/divider.svg" width="100%" alt=""/>
 
 <img src="./assets/sec-stack.svg" width="100%" alt="Technologies and Tools"/>
 
@@ -36,7 +33,7 @@
   </tr>
 </table>
 
-<br/><br/>
+<img src="./assets/divider.svg" width="100%" alt=""/>
 
 <img src="./assets/sec-focus.svg" width="100%" alt="Current Focus"/>
 
@@ -101,7 +98,7 @@
   </tr>
 </table>
 
-<br/><br/>
+<img src="./assets/divider.svg" width="100%" alt=""/>
 
 <img src="./assets/sec-learning.svg" width="100%" alt="Currently Learning"/>
 
@@ -160,19 +157,19 @@
   </tr>
 </table>
 
-<br/><br/>
+<img src="./assets/divider.svg" width="100%" alt=""/>
 
 <img src="./assets/sec-mindset.svg" width="100%" alt="Development Mindset"/>
 
 <img src="./assets/cards-mindset.svg" width="100%" alt="Understand, Build, Improve, Grow"/>
 
-<br/><br/>
+<img src="./assets/divider.svg" width="100%" alt=""/>
 
 <img src="./assets/sec-roadmap.svg" width="100%" alt="Roadmap"/>
 
 <img src="./assets/roadmap.svg" width="100%" alt="Learn, Build, Collaborate, First experience"/>
 
-<br/><br/>
+<img src="./assets/divider.svg" width="100%" alt=""/>
 
 <img src="./assets/sec-objective.svg" width="100%" alt="Professional Objective"/>
 
@@ -184,7 +181,7 @@
 
 <img src="./assets/cards-objective.svg" width="100%" alt="Learn, Collaborate, Contribute, Grow"/>
 
-<br/><br/>
+<img src="./assets/divider.svg" width="100%" alt=""/>
 
 <img src="./assets/sec-languages.svg" width="100%" alt="Languages"/>
 
@@ -194,7 +191,7 @@
   <img src="https://img.shields.io/badge/English-Improving-2563EB?style=for-the-badge&logo=googletranslate&logoColor=white" alt="English - Improving"/>
 </p>
 
-<br/><br/>
+<img src="./assets/divider.svg" width="100%" alt=""/>
 
 <img src="./assets/sec-stats.svg" width="100%" alt="GitHub Stats"/>
 
@@ -208,7 +205,7 @@
   <img width="96%" src="https://github-readme-activity-graph.vercel.app/graph?username=Gothi2213&bg_color=0D1117&color=60A5FA&line=2563EB&point=FFFFFF&area=true&area_color=2563EB&hide_border=true&radius=14" alt="Contribution activity"/>
 </p>
 
-<br/><br/>
+<img src="./assets/divider.svg" width="100%" alt=""/>
 
 <img src="./assets/sec-connect.svg" width="100%" alt="Let's Connect"/>
 
