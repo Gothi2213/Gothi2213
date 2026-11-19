@@ -98,27 +98,39 @@ def render(d):
                   f'<text x="{lx + 185}" y="{ly}" text-anchor="end" class="m" font-size="12.5" fill="#B08A93">{p * 100:.1f}%</text>')
     else:
         o += '<text class="m" x="40" y="304" font-size="13" fill="#B08A93">// languages appear after the first sync with GitHub</text>'
-    # heatmap
+    # isometric skyline: one prism per week, height = that week's real contribution total
     weeks = d['weeks'][-53:] if d else [[0] * 7 for _ in range(53)]
-    mx = max([max(w) for w in weeks] + [1])
-    cols = ['#1A0A10', '#7F1D1D', '#DC2626', '#FB7185', '#FDBA74']
+    tot = [sum(w) for w in weeks]
+    mx = max(tot + [1])
+    cols = [('#2B1119', '#1A0A10', '#3A1722'), ('#7F1D1D', '#5B1414', '#B91C1C'), ('#DC2626', '#991B1B', '#F87171'), ('#F97316', '#C2410C', '#FDBA74'), ('#FDBA74', '#F97316', '#FFF1F2')]
     lvl = lambda n: 0 if n == 0 else min(4, 1 + int(3.999 * n / mx))
-    o += '<text class="m" x="40" y="366" font-size="12" letter-spacing="2.4" fill="#F97316">CONTRIBUTIONS / LAST 12 MONTHS</text>'
-    for wi, wk in enumerate(weeks):
-        cells = ''.join(f'<rect x="{40 + wi * 15.5:.1f}" y="{380 + di * 15}" width="12" height="12" rx="3" fill="{cols[lvl(n)]}"{" stroke=\"#2B1119\"" if n == 0 else ""}/>' for di, n in enumerate(wk))
-        o += f'<g class="col" style="animation-delay:{.4 + wi * .022:.2f}s">{cells}</g>'
-    o += '<clipPath id="hm"><rect x="40" y="378" width="820" height="110"/></clipPath><g clip-path="url(#hm)"><polygon class="sheen" points="0,378 60,378 20,488 -40,488" fill="#fff" fill-opacity=".16"/></g>'
+    o += '<text class="m" x="40" y="366" font-size="12" letter-spacing="2.4" fill="#F97316">CONTRIBUTIONS / LAST 12 MONTHS &#183; WEEKLY</text>'
+    base, step, bw, dp = 478, 15.4, 10, 6
+    o += f'<path d="M30,{base + 3}H870" stroke="#FB7185" stroke-opacity=".35"/><path d="M30,{base + 3}H870" stroke="#F97316" stroke-opacity=".5" filter="url(#b8)"/>'
+    peak = 0
+    for i, v in enumerate(tot):
+        h = max(3.0, v / mx * 84) if d else 3.0
+        if d and v == mx and mx > 0:
+            peak = i
+        x = 44 + i * step
+        top, side, tp = cols[lvl(v)]
+        y = base - h
+        o += (f'<g class="bar" style="animation-delay:{.3 + i * .03:.2f}s"><rect x="{x:.1f}" y="{y:.1f}" width="{bw}" height="{h:.1f}" fill="{top}"/>'
+              f'<polygon points="{x + bw:.1f},{y:.1f} {x + bw + dp},{y - dp / 2:.1f} {x + bw + dp},{base - dp / 2:.1f} {x + bw:.1f},{base}" fill="{side}"/>'
+              f'<polygon points="{x:.1f},{y:.1f} {x + dp:.1f},{y - dp / 2:.1f} {x + bw + dp:.1f},{y - dp / 2:.1f} {x + bw:.1f},{y:.1f}" fill="{tp}"/></g>')
+    if d and mx > 0:
+        px = 44 + peak * step + bw / 2
+        py = base - 84 - 10
+        o += f'<g class="in" style="animation-delay:2.4s"><path d="M{px:.1f},{py + 4:.1f}V{py + 14:.1f}" stroke="#FDBA74"/><text class="m" x="{px:.1f}" y="{py:.1f}" text-anchor="middle" font-size="11.5" fill="#FDBA74">peak week: {mx}</text></g>'
+    o += '<clipPath id="hm"><rect x="30" y="360" width="840" height="124"/></clipPath><g clip-path="url(#hm)"><polygon class="sheen" points="0,360 60,360 20,486 -40,486" fill="#fff" fill-opacity=".07"/></g>'
     if ph:
-        o += '<text class="m" x="300" y="366" font-size="12" fill="#B08A93">// waiting for the first sync (GitHub Action)</text>'
-    for i, c in enumerate(cols):
-        o += f'<rect x="{722 + i * 16}" y="356" width="12" height="12" rx="3" fill="{c}"/>'
-    o += '<text class="m" x="714" y="366" text-anchor="end" font-size="11" fill="#B08A93">less</text><text class="m" x="810" y="366" font-size="11" fill="#B08A93">more</text>'
+        o += '<text class="m" x="360" y="366" font-size="12" fill="#B08A93">// waiting for the first sync (GitHub Action)</text>'
     stamp = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d')
     o += f'<text class="m" x="860" y="46" text-anchor="end" font-size="11.5" fill="#B08A93">{"awaiting first sync" if ph else "updated " + stamp + " UTC"}</text>'
     css = (f"text{{font-family:{FONT}}}.m{{font-family:{MONO}}}"
            "@keyframes gb{to{opacity:.85}}.gl{animation:gb 4.5s ease-in-out infinite alternate}@keyframes sw{0%{transform:translateX(-120px)}45%,100%{transform:translateX(1000px)}}.sheen{animation:sw 9s cubic-bezier(.45,0,.25,1) 2.5s infinite}@keyframes in{from{opacity:0;transform:translateY(12px)}}@keyframes gr{from{transform:scaleX(0)}}@keyframes cl{from{opacity:0}}"
            ".in{animation:in .9s cubic-bezier(.2,.8,.2,1) both}.grow{transform-box:fill-box;transform-origin:left center;animation:gr 1.6s cubic-bezier(.3,.7,.2,1) .5s both}"
-           ".col{animation:cl .6s ease both}@media (prefers-reduced-motion:reduce){*{animation:none!important}.sheen{display:none}}")
+           ".bar{transform-box:fill-box;transform-origin:center bottom;animation:bg_ 1s cubic-bezier(.2,.8,.2,1) both}@keyframes bg_{from{transform:scaleY(0)}}@media (prefers-reduced-motion:reduce){*{animation:none!important}.sheen{display:none}}")
     label = 'GitHub stats: repositories, stars, followers, contributions, top languages and contribution heatmap'
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="{label}"><title>{label}</title>
 <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07050A"/><stop offset=".6" stop-color="#16070E"/><stop offset="1" stop-color="#2E0A16"/></linearGradient>

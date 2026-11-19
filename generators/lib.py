@@ -103,3 +103,30 @@ def embers(n, seed, w, h, cols=('#FB923C', '#FDBA74', '#F87171', '#FDA4AF')):
         out += (f'<circle class="em" cx="{r.uniform(0, w):.0f}" cy="{h + 8}" r="{r.uniform(.8, 2.3):.1f}" fill="{r.choice(cols)}" '
                 f'style="--dx:{r.uniform(-60, 60):.0f}px;--dy:-{r.uniform(.45, .95) * h:.0f}px;animation-duration:{dur:.1f}s;animation-delay:-{r.uniform(0, dur):.1f}s"/>')
     return out
+
+
+import math
+
+
+def _smooth(pts):
+    n = len(pts)
+    d = f'M{pts[0][0]:.1f},{pts[0][1]:.1f}'
+    for i in range(n):
+        p0, p1, p2, p3 = pts[i - 1], pts[i], pts[(i + 1) % n], pts[(i + 2) % n]
+        c1 = (p1[0] + (p2[0] - p0[0]) / 6, p1[1] + (p2[1] - p0[1]) / 6)
+        c2 = (p2[0] - (p3[0] - p1[0]) / 6, p2[1] - (p3[1] - p1[1]) / 6)
+        d += f'C{c1[0]:.1f},{c1[1]:.1f} {c2[0]:.1f},{c2[1]:.1f} {p2[0]:.1f},{p2[1]:.1f}'
+    return d + 'Z'
+
+
+def blob(cx, cy, r, seed, n=7):
+    rnd = random.Random(seed)
+    return _smooth([(cx + r * rnd.uniform(.7, 1.25) * math.cos(2 * math.pi * k / n), cy + r * rnd.uniform(.7, 1.25) * math.sin(2 * math.pi * k / n)) for k in range(n)])
+
+
+def blob_anim(cx, cy, r, seed, dur, fill, op=.5):
+    """morphing liquid blob (SMIL path morph, same command structure so it interpolates)."""
+    ds = [blob(cx, cy, r, seed + k * 7) for k in range(3)]
+    vals = ';'.join(ds + [ds[0]])
+    return (f'<path d="{ds[0]}" fill="{fill}" opacity="{op}" class="mo"><animate attributeName="d" values="{vals}" dur="{dur}s" repeatCount="indefinite" '
+            f'calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1;.45 0 .55 1"/></path>')
