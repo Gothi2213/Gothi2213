@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 360" width="1280" height="360" role="img" aria-label="Thiago Sarco - Software Developer in Training">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#070B14"/>
+      <stop offset="0.55" stop-color="#0B1226"/>
+      <stop offset="1" stop-color="#0F1D45"/>
+    </linearGradient>
+    <radialGradient id="orbA" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#2563EB" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#2563EB" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orbB" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#60A5FA" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#60A5FA" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="name" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="0.6" stop-color="#DBEAFE"/>
+      <stop offset="1" stop-color="#93C5FD"/>
+    </linearGradient>
+    <linearGradient id="border" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3B82F6" stop-opacity="0.9"/>
+      <stop offset="0.5" stop-color="#1E3A8A" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#60A5FA" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="fadeL" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#070B14" stop-opacity="0.95"/>
+      <stop offset="0.45" stop-color="#070B14" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="scan" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#60A5FA" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#60A5FA" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#60A5FA" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#60A5FA"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#1E3A8A" stroke-opacity="0.28" stroke-width="1"/>
+    </pattern>
+    <clipPath id="card"><rect x="0" y="0" width="1280" height="360" rx="22"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#card)">
+    <rect width="1280" height="360" fill="url(#bg)"/>
+    <rect width="1280" height="360" fill="url(#grid)"/>
+
+    <circle cx="1080" cy="90" r="330" fill="url(#orbA)">
+      <animate attributeName="opacity" values="0.75;1;0.75" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="520" cy="420" r="300" fill="url(#orbB)">
+      <animate attributeName="opacity" values="1;0.6;1" dur="7s" repeatCount="indefinite"/>
+    </circle>
+
+    <rect x="-300" y="0" width="300" height="360" fill="url(#scan)">
+      <animate attributeName="x" values="-300;1280" dur="9s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- decorative dots -->
+    <g fill="#60A5FA" fill-opacity="0.55">
+      <circle cx="610" cy="60" r="2.5"/><circle cx="650" cy="60" r="2.5"/><circle cx="690" cy="60" r="2.5"/>
+      <circle cx="610" cy="100" r="2.5"/><circle cx="650" cy="100" r="2.5"/><circle cx="690" cy="100" r="2.5"/>
+    </g>
+
+    <!-- status pill -->
+    <rect x="72" y="62" width="262" height="34" rx="17" fill="#0E1A3A" stroke="#2563EB" stroke-opacity="0.8"/>
+    <circle cx="94" cy="79" r="5" fill="#34D399">
+      <animate attributeName="opacity" values="1;0.25;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="110" y="84" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="12.5" font-weight="700" letter-spacing="2.4" fill="#BFDBFE">OPEN TO OPPORTUNITIES</text>
+
+    <!-- name -->
+    <text x="68" y="188" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="78" font-weight="800" letter-spacing="3" fill="url(#name)">THIAGO SARCO</text>
+    <rect x="72" y="208" width="96" height="5" rx="2.5" fill="url(#bar)"/>
+    <rect x="178" y="208" width="14" height="5" rx="2.5" fill="#2563EB" fill-opacity="0.6"/>
+    <rect x="202" y="208" width="6" height="5" rx="2.5" fill="#2563EB" fill-opacity="0.35"/>
+
+    <text x="72" y="256" font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="23" font-weight="600" letter-spacing="7" fill="#60A5FA">SOFTWARE DEVELOPER IN TRAINING</text>
+    <text x="72" y="298" font-family="'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace" font-size="16" letter-spacing="1" fill="#8B9BB4">Java  /  JavaScript  /  SQL  /  Web Development</text>
+
+    <!-- code window -->
+    <g transform="translate(850 66)">
+      <rect width="360" height="252" rx="14" fill="#0A1124" fill-opacity="0.92" stroke="url(#border)" stroke-width="1.5"/>
+      <path d="M0 14a14 14 0 0 1 14-14h332a14 14 0 0 1 14 14v26H0z" fill="#101B38"/>
+      <circle cx="24" cy="20" r="5.5" fill="#3B82F6"/>
+      <circle cx="44" cy="20" r="5.5" fill="#60A5FA" fill-opacity="0.7"/>
+      <circle cx="64" cy="20" r="5.5" fill="#93C5FD" fill-opacity="0.45"/>
+      <text x="180" y="25" font-family="'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace" font-size="12" fill="#6B7C99">developer.java</text>
+      <g font-family="'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace" font-size="15.5">
+        <text x="24" y="72"><tspan fill="#60A5FA">class</tspan><tspan fill="#E5EDFF"> Developer </tspan><tspan fill="#8B9BB4">{</tspan></text>
+        <text x="44" y="100"><tspan fill="#60A5FA">String</tspan><tspan fill="#E5EDFF"> status = </tspan><tspan fill="#93C5FD">"learning"</tspan><tspan fill="#8B9BB4">;</tspan></text>
+        <text x="44" y="126"><tspan fill="#60A5FA">String</tspan><tspan fill="#8B9BB4">[]</tspan><tspan fill="#E5EDFF"> stack = </tspan><tspan fill="#8B9BB4">{</tspan></text>
+        <text x="64" y="152"><tspan fill="#93C5FD">"Java"</tspan><tspan fill="#8B9BB4">, </tspan><tspan fill="#93C5FD">"JS"</tspan><tspan fill="#8B9BB4">, </tspan><tspan fill="#93C5FD">"SQL"</tspan></text>
+        <text x="44" y="178"><tspan fill="#8B9BB4">};</tspan></text>
+        <text x="44" y="204"><tspan fill="#60A5FA">void</tspan><tspan fill="#E5EDFF"> grow</tspan><tspan fill="#8B9BB4">()</tspan><tspan fill="#E5EDFF"> </tspan><tspan fill="#8B9BB4">{ build(); }</tspan></text>
+      </g>
+      <rect x="44" y="216" width="9" height="18" fill="#60A5FA">
+        <animate attributeName="opacity" values="1;0;1" dur="1.1s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+  </g>
+  <rect x="1" y="1" width="1278" height="358" rx="21" fill="none" stroke="url(#border)" stroke-width="1.5"/>
+</svg>
