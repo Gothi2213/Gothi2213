@@ -1,408 +1,96 @@
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-<!--                              HEADER                                         -->
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-
 <div align="center">
-
-<img
-  src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,45:111827,75:172554,100:2563EB&height=230&section=header&text=THIAGO%20SARCO&fontSize=55&fontColor=FFFFFF&fontAlignY=38&desc=SOFTWARE%20DEVELOPER%20IN%20TRAINING&descAlignY=58&descSize=18&descColor=93C5FD&animation=fadeIn"
-  width="100%"
-/>
-
-<br>
-
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,45:111827,75:172554,100:2563EB&height=240&section=header&text=THIAGO%20SARCO&fontSize=60&fontColor=FFFFFF&fontAlignY=38&desc=SOFTWARE%20DEVELOPER%20IN%20TRAINING&descSize=20&descColor=93C5FD&descAlignY=58&animation=fadeIn" alt="Thiago Sarco" width="100%"/>
 <a href="https://github.com/Gothi2213">
-  <img src="https://img.shields.io/badge/GitHub-Gothi2213-0D1117?style=for-the-badge&logo=github&logoColor=white" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=21&duration=3200&pause=900&color=60A5FA&center=true&vCenter=true&width=640&lines=Learning+by+building+%F0%9F%9A%80;Java+%C2%B7+JavaScript+%C2%B7+SQL+%C2%B7+Web+Development;Looking+for+my+first+professional+experience;Open+to+learning%2C+building+and+growing" alt="Typing SVG" />
 </a>
-&nbsp;
-<img src="https://img.shields.io/badge/Argentina-0D1117?style=for-the-badge&logo=googlemaps&logoColor=60A5FA" />
-&nbsp;
-<img src="https://img.shields.io/badge/Software%20Development-0D1117?style=for-the-badge&logo=codeforces&logoColor=60A5FA" />
-
+<br/><br/>
+![GitHub](https://img.shields.io/badge/GitHub-Gothi2213-0D1117?style=for-the-badge&logo=github&logoColor=white)
+![Argentina](https://img.shields.io/badge/Argentina-0D1117?style=for-the-badge&logo=googlemaps&logoColor=60A5FA)
+![Software Development](https://img.shields.io/badge/Software%20Development-172554?style=for-the-badge&logo=codeforces&logoColor=white)
+![Open to work](https://img.shields.io/badge/Open%20to-Opportunities-2563EB?style=for-the-badge&logo=handshake&logoColor=white)
 </div>
-
-<br>
-
 ---
-
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-<!--                              ABOUT                                          -->
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-
-<div align="center">
-
-# 👋 About Me
-
-</div>
-
+<h2 align="center">👋 About Me</h2>
 <table>
 <tr>
-<td width="65%">
-
-### 💻 Software Developer in Training
-
-I'm a **Software Development student** currently building my knowledge through academic learning and continuous practice.
-
-I'm interested in **software development, web development, databases and problem solving**, with a focus on understanding how complete software solutions are designed and developed.
-
+<td width="65%" valign="top">
+💻 Software Developer in Training
+I'm a Software Development student currently building my knowledge through academic learning and continuous practice.
+I'm interested in software development, web development, databases and problem solving, with a focus on understanding how complete software solutions are designed and developed.
 I enjoy learning by building, experimenting with technologies and turning ideas into functional solutions.
-
 </td>
-
-<td width="35%" align="center">
-
-<img src="https://skillicons.dev/icons?i=java,js,html,css&perline=2" />
-
-<br><br>
-
-<img src="https://img.shields.io/badge/🇦🇷%20Santa%20Fe-111827?style=for-the-badge" />
-
+<td width="35%" align="center" valign="middle">
+<img src="https://skillicons.dev/icons?i=java,js,html,css&perline=2&theme=dark" alt="main skills"/>
 </td>
 </tr>
 </table>
-
 ---
-
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-<!--                         TECHNOLOGIES                                       -->
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-
+<h2 align="center">🛠️ Technologies & Tools</h2>
 <div align="center">
-
-# 🛠️ Technologies & Tools
-
-<br>
-
-### 💻 Programming
-
-<img src="https://skillicons.dev/icons?i=java,js,cpp" />
-
-<br><br>
-
-### 🌐 Web Development
-
-<img src="https://skillicons.dev/icons?i=html,css" />
-
-<br><br>
-
-### 🗄️ Databases
-
-<img src="https://img.shields.io/badge/SQL-111827?style=for-the-badge&logo=databricks&logoColor=60A5FA" />
-
-<br><br>
-
-### 🔧 Development Tools
-
-<img src="https://skillicons.dev/icons?i=git,github" />
-
+💻 Programming	🌐 Web Development	🗄️ Databases	🔧 Dev Tools
+<img src="https://skillicons.dev/icons?i=java,js,cpp&perline=3" />	<img src="https://skillicons.dev/icons?i=html,css&perline=2" />	<img src="https://skillicons.dev/icons?i=mysql&perline=1" /><br/>SQL	<img src="https://skillicons.dev/icons?i=git,github&perline=2" />
 </div>
-
-<br>
-
 ---
-
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-<!--                         CURRENT FOCUS                                      -->
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-
+<h2 align="center">🎯 Current Focus</h2>
 <div align="center">
+☕ Java	🌐 Web Development	🗄️ Databases
+Object-Oriented Programming	HTML · CSS · JavaScript	SQL & Data Modeling
 
-# 🎯 Current Focus
-
+⚙️ Backend	🎨 Frontend	🔀 Version Control
+Application Logic	Interfaces & UX	Git & GitHub
 </div>
-
-<table align="center">
-<tr>
-
-<td align="center" width="170">
-
-### ☕
-**Java**
-
-Object-Oriented Programming
-
-</td>
-
-<td align="center" width="170">
-
-### 🌐
-**Web Development**
-
-HTML · CSS · JavaScript
-
-</td>
-
-<td align="center" width="170">
-
-### 🗄️
-**Databases**
-
-SQL & Data Modeling
-
-</td>
-
-</tr>
-
-<tr>
-
-<td align="center">
-
-### ⚙️
-**Backend**
-
-Application Logic
-
-</td>
-
-<td align="center">
-
-### 🎨
-**Frontend**
-
-Interfaces & UX
-
-</td>
-
-<td align="center">
-
-### 🔀
-**Version Control**
-
-Git & GitHub
-
-</td>
-
-</tr>
-</table>
-
 ---
-
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-<!--                            LEARNING                                        -->
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-
-<div align="center">
-
-# 📚 Currently Learning
-
-</div>
-
-<br>
-
+<h2 align="center">📚 Currently Learning</h2>
 <table>
 <tr>
-<td width="50%">
-
-### ☕ Object-Oriented Programming
-
-Strengthening my understanding of:
-
-- Classes & Objects
-- Encapsulation
-- Inheritance
-- Polymorphism
-- Abstraction
-- Data structures
-
+<td width="50%" valign="top">
+☕ Object-Oriented Programming
+`Classes & Objects` `Encapsulation` `Inheritance` `Polymorphism` `Abstraction` `Data Structures`
+🗄️ Databases
+`SQL` `Relational DBs` `Data Modeling` `Queries` `Relationships` `Database Design`
 </td>
-
-<td width="50%">
-
-### 🌐 Web Development
-
-Working with:
-
-- HTML
-- CSS
-- JavaScript
-- Responsive design
-- User interfaces
-- Web application logic
-
-</td>
-</tr>
-
-<tr>
-<td width="50%">
-
-### 🗄️ Databases
-
-Learning about:
-
-- SQL
-- Relational databases
-- Data modeling
-- Queries
-- Relationships
-- Database design
-
-</td>
-
-<td width="50%">
-
-### ⚙️ Software Development
-
-Developing knowledge in:
-
-- Requirements analysis
-- Software design
-- Backend development
-- Frontend development
-- Team collaboration
-- Git workflows
-
+<td width="50%" valign="top">
+🌐 Web Development
+`HTML` `CSS` `JavaScript` `Responsive Design` `User Interfaces` `Web App Logic`
+⚙️ Software Development
+`Requirements Analysis` `Software Design` `Backend` `Frontend` `Team Collaboration` `Git Workflows`
 </td>
 </tr>
 </table>
-
 ---
-
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-<!--                              MINDSET                                       -->
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-
+<h2 align="center">🧠 Development Mindset</h2>
 <div align="center">
-
-# 🧠 Development Mindset
-
-<br>
-
-<table>
-<tr>
-
-<td align="center" width="180">
-
-### 🔍
-**Understand**
-
-Analyze the problem before writing the solution.
-
-</td>
-
-<td align="center" width="180">
-
-### 🧩
-**Build**
-
-Turn ideas into functional software.
-
-</td>
-
-<td align="center" width="180">
-
-### 🔄
-**Improve**
-
-Learn from mistakes and refine the solution.
-
-</td>
-
-<td align="center" width="180">
-
-### 🚀
-**Grow**
-
-Keep learning and take on new challenges.
-
-</td>
-
-</tr>
-</table>
-
+🔍 Understand	🧩 Build	🔄 Improve	🚀 Grow
+Analyze the problem before writing the solution	Turn ideas into functional software	Learn from mistakes and refine the solution	Keep learning and take on new challenges
 </div>
-
 ---
-
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-<!--                          PROFESSIONAL                                      -->
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-
-<div align="center">
-
-# 💼 Professional Objective
-
-</div>
-
-<table>
-<tr>
-<td>
-
-I'm currently looking for opportunities to gain my **first professional experience in software development**.
-
+<h2 align="center">💼 Professional Objective</h2>
+<p align="center">
+I'm currently looking for opportunities to gain my <b>first professional experience in software development</b>.<br/>
 I'm interested in joining a team where I can:
-
-</td>
-</tr>
-</table>
-
-<br>
-
+</p>
 <div align="center">
-
-| 🌱 | 🤝 | 💻 | 📈 |
-|:---:|:---:|:---:|:---:|
-| **Learn** | **Collaborate** | **Contribute** | **Grow** |
-| Learn from experienced developers | Work as part of a team | Apply my technical knowledge | Continue improving |
-
+🌱 Learn	🤝 Collaborate	💻 Contribute	📈 Grow
+From experienced developers	As part of a team	Applying my technical knowledge	Continue improving
 </div>
-
 ---
-
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-<!--                              LANGUAGES                                     -->
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-
+<h2 align="center">🌎 Languages</h2>
 <div align="center">
-
-# 🌎 Languages
-
-<br>
-
-<img src="https://img.shields.io/badge/Spanish-Native-111827?style=for-the-badge&logoColor=white" />
-&nbsp;
-<img src="https://img.shields.io/badge/English-Improving-111827?style=for-the-badge&logoColor=white" />
-
+![Spanish](https://img.shields.io/badge/Spanish-Native-172554?style=for-the-badge)
+![English](https://img.shields.io/badge/English-Improving-2563EB?style=for-the-badge)
 </div>
-
 ---
-
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-<!--                              CONTACT                                       -->
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-
+<h2 align="center">📊 GitHub Stats</h2>
 <div align="center">
-
-# 📫 Let's Connect
-
-<br>
-
-<a href="https://github.com/Gothi2213">
-<img src="https://img.shields.io/badge/GitHub-Gothi2213-111827?style=for-the-badge&logo=github&logoColor=white" />
-</a>
-
-&nbsp;&nbsp;
-
-<a href="mailto:thiagosarco13@gmail.com">
-<img src="https://img.shields.io/badge/Email-Contact%20Me-111827?style=for-the-badge&logo=gmail&logoColor=EA4335" />
-</a>
-
-<br><br>
-
+<img height="170" src="https://github-readme-stats.vercel.app/api?username=Gothi2213&show_icons=true&hide_border=true&bg_color=0D1117&title_color=60A5FA&icon_color=2563EB&text_color=C9D1D9&ring_color=60A5FA" alt="GitHub stats"/>
+<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Gothi2213&layout=compact&hide_border=true&bg_color=0D1117&title_color=60A5FA&text_color=C9D1D9" alt="Top languages"/>
+</div>
+---
+<h2 align="center">📫 Let's Connect</h2>
+<div align="center">
+![GitHub](https://img.shields.io/badge/GitHub-Gothi2213-0D1117?style=for-the-badge&logo=github&logoColor=white)
+![Email](https://img.shields.io/badge/Email-Contact%20Me-0D1117?style=for-the-badge&logo=gmail&logoColor=EA4335)
+<br/>
 > **Open to learning, building and growing.**
-
-</div>
-
-<br>
-
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-<!--                              FOOTER                                        -->
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-
-<div align="center">
-
-<img
-  src="https://capsule-render.vercel.app/api?type=waving&color=0:2563EB,45:172554,75:111827,100:0D1117&height=130&section=footer"
-  width="100%"
-/>
-
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:2563EB,45:172554,75:111827,100:0D1117&height=130&section=footer" alt="footer" width="100%"/>
 </div>
